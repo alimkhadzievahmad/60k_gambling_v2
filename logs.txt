@@ -1,0 +1,438 @@
+http://localhost:3000/wow.3033e537.mp3
+http://localhost:3000/yeah.7688bc13.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Main.cee00e3b.js:12  GET http://localhost:3000/wicked.9aae3511.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:24
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Main.cee00e3b.js:12  GET http://localhost:3000/buttons.a48a7a1a.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Main.cee00e3b.js:12  GET http://localhost:3000/arrows.e5522174.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Main.ac452ee5.css:1  GET http://localhost:3000/bg.76a7f37c.png 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-middle-left-active.aa8339fb.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-easy-left.78846bed.svg 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/iconFont.4a5183b3.ttf net::ERR_ABORTED 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/bg-grid.4fb403d8.svg 404 (Not Found)
+Main.cee00e3b.js:12  GET http://localhost:3000/roll.f8451d78.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Black.b5bde87d.woff2 net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Regular.6f7460dc.woff2 net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Bold.d2d427e6.woff2 net::ERR_ABORTED 404 (Not Found)
+Main.cee00e3b.js:12  GET http://localhost:3000/amount.61415b97.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+default.23ee1dae.css:1  GET http://localhost:3000/logo.ddbbfc28.svg 404 (Not Found)
+Main.cee00e3b.js:12  GET http://localhost:3000/win.f0b22e3a.mp3 404 (Not Found)
+u @ Main.cee00e3b.js:12
+a @ Main.cee00e3b.js:12
+load @ Main.cee00e3b.js:12
+init @ Main.cee00e3b.js:12
+n.register.Howl.init @ Main.cee00e3b.js:24
+i @ Main.cee00e3b.js:12
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:261
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Medium.6da5329e.woff2 net::ERR_ABORTED 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/board-reflex.10a29c39.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/blue_btn.ed65f7d9.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-hard-left-active.7578650b.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/yellow_btn.eb23fc76.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/grid.dbef86b4.svg 404 (Not Found)
+preloader-mobile.1e65e66a.svg:1  GET http://localhost:3000/preloader-mobile.1e65e66a.svg 404 (Not Found)
+Image
+A @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+O @ default.7c57999d.js:1
+Promise.then
+w @ default.7c57999d.js:1
+r.register.y.setState @ default.7c57999d.js:1
+r.register.n.Component.setState @ default.7c57999d.js:1
+s @ default.7c57999d.js:1
+a @ default.7c57999d.js:1
+Promise.then
+r.register.__c @ default.7c57999d.js:1
+r.register.i.options.__e @ default.7c57999d.js:1
+n.options.__e @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+default.23ee1dae.css:1  GET http://localhost:3000/iconFont.f6c22c39.woff net::ERR_ABORTED 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-hard-right-active.37f73f1a.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-middle-right-active.fe1f4de9.svg 404 (Not Found)
+Main.ac452ee5.css:1  GET http://localhost:3000/btn-easy-right.ed81dfc7.svg 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Black.e9de12c2.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Regular.342e35a1.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Bold.afc69d07.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Medium.93397cad.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/iconFont.b410c9a1.woff2 net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Black.314cf055.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Regular.d23a630d.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Medium.956def06.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Orbitron-Bold.0d1020df.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Regular.1eee673e.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-SemiBold.89f9d39f.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Bold.e9ed37bc.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Medium.a1e825f3.woff net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Regular.7553081e.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-SemiBold.3dfb4469.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Medium.caaf85ff.ttf net::ERR_ABORTED 404 (Not Found)
+default.23ee1dae.css:1  GET http://localhost:3000/Gilroy-Bold.cd539b2c.ttf net::ERR_ABORTED 404 (Not Found)
+default.7c57999d.js:1  POST http://localhost:3000/api/common/profile 404 (Not Found)
+(anonymous) @ default.7c57999d.js:1
+r.register.e.exports @ default.7c57999d.js:1
+r.register.e.exports @ default.7c57999d.js:1
+Promise.then
+r.register.u.request @ default.7c57999d.js:1
+r.register.n.forEach.u.<computed> @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+v @ default.7c57999d.js:1
+d @ Main.cee00e3b.js:1
+await in d
+auth @ Main.cee00e3b.js:1
+Me @ default.7c57999d.js:1
+auth @ default.7c57999d.js:1
+m @ Main.cee00e3b.js:1
+(anonymous) @ Main.cee00e3b.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ Main.cee00e3b.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+Promise.then
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ default.7c57999d.js:1
+o @ default.7c57999d.js:1
+D @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+k @ default.7c57999d.js:1
+R @ default.7c57999d.js:1
+B @ default.7c57999d.js:1
+(anonymous) @ default.7c57999d.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+Promise.then
+(anonymous) @ index.521980ed.js:1
+f @ index.521980ed.js:1
+(anonymous) @ index.521980ed.js:1
+vcd15cbe7772f49c399c6a5babf22c1241717689176015:1  POST http://localhost:3000/cdn-cgi/rum? 404 (Not Found)
+(anonymous) @ vcd15cbe7772f49c399c6a5babf22c1241717689176015:1
+P @ vcd15cbe7772f49c399c6a5babf22c1241717689176015:1
+R @ vcd15cbe7772f49c399c6a5babf22c1241717689176015:1
+setTimeout
+(anonymous) @ vcd15cbe7772f49c399c6a5babf22c1241717689176015:1
+default.7c57999d.js:1  POST http://localhost:3000/api/common/profile

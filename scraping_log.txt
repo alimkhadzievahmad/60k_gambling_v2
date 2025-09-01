@@ -1,0 +1,444 @@
+2025-08-29 23:40:21,842 - INFO - Скрипт запущен.
+2025-08-29 23:40:21,864 - INFO - Начало процесса скрапинга для: https://turboplinko.turbogames.io
+2025-08-29 23:40:21,876 - INFO - Использование указанного браузера: C:\Users\ADMIN\AppData\Local\Google\Chrome\Application\chrome.exe
+2025-08-29 23:40:21,895 - INFO - Запуск браузера Chromium (или указанного вами)...
+2025-08-29 23:40:24,264 - INFO - Browser listening on: ws://127.0.0.1:57087/devtools/browser/6d8d43e3-d370-4bb1-b1aa-7dab042f9f09
+2025-08-29 23:40:25,638 - INFO - Навигация к https://turboplinko.turbogames.io и ожидание полной загрузки страницы...
+2025-08-29 23:40:26,578 - INFO - Перехвачен ответ: GET document - Статус: 200 - URL: https://turboplinko.turbogames.io/
+2025-08-29 23:40:26,595 - INFO - Сохранен ресурс (document, w): https://turboplinko.turbogames.io/ -> D:\VS\PROJ_60K_PY_V4_GAME\html_documents\document_24453.html
+2025-08-29 23:40:26,812 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://turboplinko.turbogames.io/index.521980ed.js
+2025-08-29 23:40:26,913 - INFO - Сохранен ресурс (script, w): https://turboplinko.turbogames.io/index.521980ed.js -> D:\VS\PROJ_60K_PY_V4_GAME\js\index.521980ed.js
+2025-08-29 23:40:28,135 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://cdn.svgator.com/ply/91c80d77.js?v=2022-05-04
+2025-08-29 23:40:28,269 - INFO - Сохранен ресурс (script, w): https://cdn.svgator.com/ply/91c80d77.js?v=2022-05-04 -> D:\VS\PROJ_60K_PY_V4_GAME\js\91c80d77.js
+2025-08-29 23:40:28,337 - INFO - Перехвачен ответ: GET stylesheet - Статус: 200 - URL: https://turboplinko.turbogames.io/default.23ee1dae.css
+2025-08-29 23:40:28,441 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015
+2025-08-29 23:40:28,525 - INFO - Сохранен ресурс (script, w): https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015 -> D:\VS\PROJ_60K_PY_V4_GAME\js\script.js
+2025-08-29 23:40:28,601 - INFO - Сохранен ресурс (stylesheet, w): https://turboplinko.turbogames.io/default.23ee1dae.css -> D:\VS\PROJ_60K_PY_V4_GAME\css\default.23ee1dae.css
+2025-08-29 23:40:28,948 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://turboplinko.turbogames.io/default.7c57999d.js
+2025-08-29 23:40:29,162 - INFO - Сохранен ресурс (script, w): https://turboplinko.turbogames.io/default.7c57999d.js -> D:\VS\PROJ_60K_PY_V4_GAME\js\default.7c57999d.js
+2025-08-29 23:40:29,244 - INFO - Перехвачен ответ: GET stylesheet - Статус: 200 - URL: https://turboplinko.turbogames.io/Main.ac452ee5.css
+2025-08-29 23:40:29,309 - INFO - Сохранен ресурс (stylesheet, w): https://turboplinko.turbogames.io/Main.ac452ee5.css -> D:\VS\PROJ_60K_PY_V4_GAME\css\Main.ac452ee5.css
+2025-08-29 23:40:29,783 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://www.googletagmanager.com/gtm.js?id=GTM-TX65W37
+2025-08-29 23:40:29,941 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/static/translates/assets/en.json
+2025-08-29 23:40:30,173 - INFO - Сохранен ресурс (script, w): https://www.googletagmanager.com/gtm.js?id=GTM-TX65W37 -> D:\VS\PROJ_60K_PY_V4_GAME\js\gtm.js
+2025-08-29 23:40:30,211 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://turboplinko.turbogames.io/Main.cee00e3b.js
+2025-08-29 23:40:31,435 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/static/translates/assets/en.json
+2025-08-29 23:40:32,223 - INFO - Сохранен ресурс (script, w): https://turboplinko.turbogames.io/Main.cee00e3b.js -> D:\VS\PROJ_60K_PY_V4_GAME\js\Main.cee00e3b.js
+2025-08-29 23:40:32,949 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/bg.76a7f37c.png
+2025-08-29 23:40:33,058 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/yellow_btn.eb23fc76.svg
+2025-08-29 23:40:33,144 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/bg-grid.4fb403d8.svg
+2025-08-29 23:40:33,200 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/blue_btn.ed65f7d9.svg
+2025-08-29 23:40:33,260 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-hard-right-active.37f73f1a.svg
+2025-08-29 23:40:33,350 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/grid.dbef86b4.svg
+2025-08-29 23:40:33,394 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-hard-left-active.7578650b.svg
+2025-08-29 23:40:33,424 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-middle-right-active.fe1f4de9.svg
+2025-08-29 23:40:33,519 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/board-reflex.10a29c39.svg
+2025-08-29 23:40:33,550 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-middle-left-active.aa8339fb.svg
+2025-08-29 23:40:33,694 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-easy-right.ed81dfc7.svg
+2025-08-29 23:40:33,753 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/btn-easy-left.78846bed.svg
+2025-08-29 23:40:33,819 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/preloader-mobile.1e65e66a.svg
+2025-08-29 23:40:33,879 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/logo.ddbbfc28.svg
+2025-08-29 23:40:33,885 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/Orbitron-Regular.6f7460dc.woff2
+2025-08-29 23:40:33,915 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/Orbitron-Black.b5bde87d.woff2
+2025-08-29 23:40:33,951 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/Orbitron-Bold.d2d427e6.woff2
+2025-08-29 23:40:34,040 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/Orbitron-Medium.6da5329e.woff2
+2025-08-29 23:40:34,125 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip1.b6eeba0c.mp3
+2025-08-29 23:40:34,221 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip2.7c642c65.mp3
+2025-08-29 23:40:34,310 - INFO - Перехвачен ответ: GET script - Статус: 302 - URL: https://unpkg.com/web-vitals/dist/web-vitals.attribution.iife.js
+2025-08-29 23:40:34,339 - WARNING - Ошибка сети Pyppeteer при получении содержимого ресурса https://unpkg.com/web-vitals/dist/web-vitals.attribution.iife.js: Response body is unavailable for redirect response. Попытка получить через requests (fallback).
+2025-08-29 23:40:37,587 - INFO - Ресурс https://unpkg.com/web-vitals/dist/web-vitals.attribution.iife.js успешно загружен через requests (fallback).
+2025-08-29 23:40:38,067 - INFO - Сохранен ресурс (script, w): https://unpkg.com/web-vitals/dist/web-vitals.attribution.iife.js -> D:\VS\PROJ_60K_PY_V4_GAME\js\web-vitals.attribution.iife.js
+2025-08-29 23:40:38,521 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip7.7395396b.mp3
+2025-08-29 23:40:38,968 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip4.33150050.mp3
+2025-08-29 23:40:39,401 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip8.6c559cd6.mp3
+2025-08-29 23:40:40,370 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/fabulous.5b9289bb.mp3
+2025-08-29 23:40:40,605 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip9.fe2c5a0d.mp3
+2025-08-29 23:40:40,877 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/yeah.7688bc13.mp3
+2025-08-29 23:40:41,109 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/risk.2e83ea36.mp3
+2025-08-29 23:40:41,389 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/wow.3033e537.mp3
+2025-08-29 23:40:41,885 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/drop.8482334e.mp3
+2025-08-29 23:40:41,999 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/nice.200ebb31.mp3
+2025-08-29 23:40:42,447 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/win.f0b22e3a.mp3
+2025-08-29 23:40:42,830 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/wicked.9aae3511.mp3
+2025-08-29 23:40:43,225 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/plus.7a08c034.mp3
+2025-08-29 23:40:43,728 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip5.99424a5e.mp3
+2025-08-29 23:40:44,163 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/buttons.a48a7a1a.mp3
+2025-08-29 23:40:44,391 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip6.7e358310.mp3
+2025-08-29 23:40:44,945 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/minus.d1f45687.mp3
+2025-08-29 23:40:46,261 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/roll.f8451d78.mp3
+2025-08-29 23:40:48,011 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/arrows.e5522174.mp3
+2025-08-29 23:40:48,456 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/blip3.33150050.mp3
+2025-08-29 23:40:48,962 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/holy.56aa06ff.mp3
+2025-08-29 23:40:48,975 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/amount.61415b97.mp3
+2025-08-29 23:40:50,471 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/cool.00106f04.mp3
+2025-08-29 23:40:51,756 - INFO - Сохранен ресурс (xhr, w): https://turboplinko.turbogames.io/static/translates/assets/en.json -> D:\VS\PROJ_60K_PY_V4_GAME\api_logs\en.json
+2025-08-29 23:40:52,447 - INFO - Перехвачен ответ: GET document - Статус: 200 - URL: https://turboplinko.turbogames.io/brum_1.b1767f70.svg
+2025-08-29 23:40:52,662 - INFO - Перехвачен ответ: GET script - Статус: 200 - URL: https://unpkg.com/web-vitals@5.1.0/dist/web-vitals.attribution.iife.js
+2025-08-29 23:40:53,196 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/iconFont.4a5183b3.ttf
+2025-08-29 23:40:53,599 - INFO - Сохранен ресурс (image, wb): https://turboplinko.turbogames.io/bg.76a7f37c.png -> D:\VS\PROJ_60K_PY_V4_GAME\images\bg.76a7f37c.png
+2025-08-29 23:40:53,607 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/yellow_btn.eb23fc76.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\yellow_btn.eb23fc76.svg
+2025-08-29 23:40:53,837 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/bg-grid.4fb403d8.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\bg-grid.4fb403d8.svg
+2025-08-29 23:40:53,897 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/blue_btn.ed65f7d9.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\blue_btn.ed65f7d9.svg
+2025-08-29 23:40:53,989 - INFO - Перехвачен ответ: POST xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/common/profile
+2025-08-29 23:40:54,547 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/demo-mobile.86b62d6a.webp
+2025-08-29 23:40:55,220 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-hard-right-active.37f73f1a.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-hard-right-active.37f73f1a.svg
+2025-08-29 23:40:55,593 - INFO - Перехвачен ответ: POST xhr - Статус: 204 - URL: https://turboplinko.turbogames.io/cdn-cgi/rum?
+2025-08-29 23:40:56,040 - INFO - Залогирован API-вызов (Статус: 204): https://turboplinko.turbogames.io/cdn-cgi/rum?
+2025-08-29 23:40:56,520 - INFO - Перехвачен ответ: GET other - Статус: 200 - URL: https://turboplinko.turbogames.io/static/favicons/turboplinko.svg
+2025-08-29 23:40:57,156 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/grid.dbef86b4.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\grid.dbef86b4.svg
+2025-08-29 23:40:57,664 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-hard-left-active.7578650b.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-hard-left-active.7578650b.svg
+2025-08-29 23:40:57,821 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-middle-right-active.fe1f4de9.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-middle-right-active.fe1f4de9.svg
+2025-08-29 23:40:58,043 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/common/tournaments/my?gameId=turboplinko
+2025-08-29 23:40:58,256 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/board-reflex.10a29c39.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\board-reflex.10a29c39.svg
+2025-08-29 23:40:58,478 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/b1.dd55a0d7.png
+2025-08-29 23:40:58,733 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/b0.f7c89504.png
+2025-08-29 23:40:59,359 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/b2.3a57a1d5.png
+2025-08-29 23:40:59,825 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/board.c4ff10bb.svg
+2025-08-29 23:41:00,509 - INFO - Перехвачен ответ: GET image - Статус: 200 - URL: https://turboplinko.turbogames.io/point.0decd240.svg
+2025-08-29 23:41:02,041 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/common/limits?currency=usd
+2025-08-29 23:41:04,060 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-middle-left-active.aa8339fb.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-middle-left-active.aa8339fb.svg
+2025-08-29 23:41:05,704 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-easy-right.ed81dfc7.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-easy-right.ed81dfc7.svg
+2025-08-29 23:41:07,238 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/btn-easy-left.78846bed.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\btn-easy-left.78846bed.svg
+2025-08-29 23:41:07,920 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/preloader-mobile.1e65e66a.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\preloader-mobile.1e65e66a.svg
+2025-08-29 23:41:08,218 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/logo.ddbbfc28.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\logo.ddbbfc28.svg
+2025-08-29 23:41:08,321 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/Orbitron-Regular.6f7460dc.woff2 -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\Orbitron-Regular.6f7460dc.woff2
+2025-08-29 23:41:08,710 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/Orbitron-Black.b5bde87d.woff2 -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\Orbitron-Black.b5bde87d.woff2
+2025-08-29 23:41:09,065 - INFO - Перехвачен ответ: GET font - Статус: 200 - URL: https://turboplinko.turbogames.io/Gilroy-Bold.e9ed37bc.woff
+2025-08-29 23:41:09,843 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/Orbitron-Bold.d2d427e6.woff2 -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\Orbitron-Bold.d2d427e6.woff2
+2025-08-29 23:41:10,055 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/Orbitron-Medium.6da5329e.woff2 -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\Orbitron-Medium.6da5329e.woff2
+2025-08-29 23:41:10,849 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip1.b6eeba0c.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:11,589 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip2.7c642c65.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:11,952 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/common/rates
+2025-08-29 23:41:12,417 - INFO - Перехвачен ответ: POST xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/games/create
+2025-08-29 23:41:13,011 - INFO - Перехвачен ответ: GET xhr - Статус: 200 - URL: https://turboplinko.turbogames.io/api/common/version/turboplinko
+2025-08-29 23:41:13,383 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip7.7395396b.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:13,686 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip4.33150050.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:13,923 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip8.6c559cd6.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:14,387 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/fabulous.5b9289bb.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:15,017 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip9.fe2c5a0d.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:15,141 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/yeah.7688bc13.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:15,472 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/risk.2e83ea36.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:15,623 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/wow.3033e537.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:15,802 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/drop.8482334e.mp3: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+2025-08-29 23:41:16,152 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/nice.200ebb31.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:16,303 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/win.f0b22e3a.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:16,813 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/wicked.9aae3511.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:17,309 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/plus.7a08c034.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:18,013 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip5.99424a5e.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:18,459 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/buttons.a48a7a1a.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:18,921 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip6.7e358310.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:19,007 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/minus.d1f45687.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:19,297 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/roll.f8451d78.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:19,474 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/arrows.e5522174.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:19,919 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/blip3.33150050.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:20,974 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/holy.56aa06ff.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:21,601 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/amount.61415b97.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:22,039 - ERROR - Ошибка при логировании API-вызова https://turboplinko.turbogames.io/cool.00106f04.mp3: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 94, in intercept_response
+    response_body_content = await response.text()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\network_manager.py", line 673, in text
+    return content.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-08-29 23:41:22,565 - INFO - Сохранен ресурс (script, w): https://unpkg.com/web-vitals@5.1.0/dist/web-vitals.attribution.iife.js -> D:\VS\PROJ_60K_PY_V4_GAME\js\web-vitals.attribution.iife_39843.js
+2025-08-29 23:41:24,125 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/iconFont.4a5183b3.ttf -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\iconFont.4a5183b3.ttf
+2025-08-29 23:41:25,788 - INFO - Сохранен ресурс (document, w): https://turboplinko.turbogames.io/brum_1.b1767f70.svg -> D:\VS\PROJ_60K_PY_V4_GAME\html_documents\brum_1.b1767f70.svg
+2025-08-29 23:41:26,468 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/api/common/profile
+2025-08-29 23:41:26,585 - ERROR - Произошла непредвиденная ошибка во время скрапинга: Navigation Timeout Exceeded: 60000 ms exceeded.
+Traceback (most recent call last):
+  File "D:\VS\PROJ_60K_PY_V4_GAME\main.py", line 285, in scrape_website
+    response = await page.goto(TARGET_URL, waitUntil='networkidle2', timeout=60000)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\page.py", line 838, in goto
+    raise error
+pyppeteer.errors.TimeoutError: Navigation Timeout Exceeded: 60000 ms exceeded.
+2025-08-29 23:41:26,591 - INFO - terminate chrome process...
+2025-08-29 23:41:26,593 - INFO - Сохранен ресурс (other, w): https://turboplinko.turbogames.io/static/favicons/turboplinko.svg -> D:\VS\PROJ_60K_PY_V4_GAME\other_resources\turboplinko.svg
+2025-08-29 23:41:26,595 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/api/common/tournaments/my?gameId=turboplinko
+2025-08-29 23:41:26,599 - INFO - Сохранен ресурс (image, wb): https://turboplinko.turbogames.io/demo-mobile.86b62d6a.webp -> D:\VS\PROJ_60K_PY_V4_GAME\images\demo-mobile.86b62d6a.webp
+2025-08-29 23:41:26,690 - INFO - Сохранен ресурс (image, wb): https://turboplinko.turbogames.io/b1.dd55a0d7.png -> D:\VS\PROJ_60K_PY_V4_GAME\images\b1.dd55a0d7.png
+2025-08-29 23:41:26,858 - INFO - Сохранен ресурс (image, wb): https://turboplinko.turbogames.io/b0.f7c89504.png -> D:\VS\PROJ_60K_PY_V4_GAME\images\b0.f7c89504.png
+2025-08-29 23:41:27,078 - INFO - Сохранен ресурс (image, wb): https://turboplinko.turbogames.io/b2.3a57a1d5.png -> D:\VS\PROJ_60K_PY_V4_GAME\images\b2.3a57a1d5.png
+2025-08-29 23:41:27,133 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/api/common/limits?currency=usd
+2025-08-29 23:41:27,238 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/board.c4ff10bb.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\board.c4ff10bb.svg
+2025-08-29 23:41:27,269 - INFO - Сохранен ресурс (image, w): https://turboplinko.turbogames.io/point.0decd240.svg -> D:\VS\PROJ_60K_PY_V4_GAME\images\point.0decd240.svg
+2025-08-29 23:41:27,295 - INFO - Сохранен ресурс (font, wb): https://turboplinko.turbogames.io/Gilroy-Bold.e9ed37bc.woff -> D:\VS\PROJ_60K_PY_V4_GAME\fonts\Gilroy-Bold.e9ed37bc.woff
+2025-08-29 23:41:27,322 - INFO - Сохранен ресурс (xhr, wb): https://turboplinko.turbogames.io/blip1.b6eeba0c.mp3 -> D:\VS\PROJ_60K_PY_V4_GAME\api_logs\blip1.b6eeba0c.mp3
+2025-08-29 23:41:27,329 - INFO - Сохранен ресурс (xhr, wb): https://turboplinko.turbogames.io/blip2.7c642c65.mp3 -> D:\VS\PROJ_60K_PY_V4_GAME\api_logs\blip2.7c642c65.mp3
+2025-08-29 23:41:27,350 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/api/games/create
+2025-08-29 23:41:27,352 - INFO - Залогирован API-вызов (Статус: 200): https://turboplinko.turbogames.io/api/common/rates
+2025-08-29 23:41:27,354 - ERROR - connection unexpectedly closed
+2025-08-29 23:41:27,357 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-399' coro=<Connection._async_send() done, defined at C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py:69> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 968, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 1038, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 1113, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 1170, in read_frame
+    frame = await Frame.read(
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\framing.py", line 69, in read
+    data = await reader(2)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\asyncio\streams.py", line 697, in readexactly
+    raise self._exception
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 301, in _loop_reading
+    self._read_fut = self._loop._proactor.recv_into(self._sock, self._data)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 472, in recv_into
+    ov.WSARecvInto(conn.fileno(), buf, flags)
+ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 635, in send
+    await self.ensure_open()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\protocol.py", line 944, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 79, in _async_send
+    await self.dispose()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 170, in dispose
+    await self._on_close()
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 151, in _on_close
+    cb.set_exception(_rewriteError(
+asyncio.exceptions.InvalidStateError: invalid state
+2025-08-29 23:41:28,368 - INFO - Браузер закрыт.
+2025-08-29 23:41:28,370 - ERROR - unhandled exception during asyncio.run() shutdown
+task: <Task finished name='Task-2' coro=<Connection._recv_loop() done, defined at C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py:53> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 61, in _recv_loop
+    await self._on_message(resp)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 141, in _on_message
+    self._on_response(msg)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\pyppeteer\connection.py", line 114, in _on_response
+    callback.set_result(msg.get('result'))
+asyncio.exceptions.InvalidStateError: invalid state
+2025-08-29 23:41:28,476 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,478 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,480 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,482 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,485 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,486 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,487 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,507 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,508 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,509 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,535 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,539 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,545 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,570 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,595 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,644 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,647 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,649 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,650 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,685 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,705 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,707 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,734 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,794 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,820 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.
+2025-08-29 23:41:28,825 - ERROR - Future exception was never retrieved
+future: <Future finished exception=NetworkError('Protocol error Target.sendMessageToTarget: Target closed.')>
+pyppeteer.errors.NetworkError: Protocol error Target.sendMessageToTarget: Target closed.

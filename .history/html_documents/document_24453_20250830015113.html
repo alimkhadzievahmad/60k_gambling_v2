@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+    
+    <!-- Устанавливаем иконку и заголовок для вкладки -->
+    <link rel="icon" type="image/svg+xml" href="./other_resources/favicon.svg">
+    <title>Turbo Plinko</title>
+    
+    <!-- 
+        Подключаем основные CSS-файлы, которые были скачаны.
+        Пути исправлены на относительные.
+        Если какие-то из этих файлов вызывают ошибку 404, их можно закомментировать или удалить.
+    -->
+    <link rel="stylesheet" href="./css/default.23ee1dae.css">
+    <link rel="stylesheet" href="./css/Main.ac452ee5.css">
+
+</head>
+<body>
+
+    <!-- 
+        Это главный контейнер, в который JavaScript динамически "встроит" всю игру.
+        Он должен быть здесь.
+    -->
+    <div id="app"></div>
+
+    <!-- 
+        Подключаем основной JavaScript-файл игры.
+        Это "мозг", который отрисует все элементы внутри <div id="app">.
+        Путь исправлен на относительный.
+    -->
+    <script type="module" src="./js/index.521d80ed.js"></script> <!-- ВНИМАНИЕ: Имя файла может немного отличаться, проверьте вашу папку /js -->
+    
+    <!-- 
+        Подключаем второй скрипт (nomodule) для совместимости со старыми браузерами.
+        Путь также исправлен.
+    -->
+    <script src="./js/index.156f4152.js" nomodule="" defer=""></script>
+
+</body>
+</html
