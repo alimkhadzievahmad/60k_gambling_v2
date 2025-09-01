@@ -191,119 +191,7 @@ n.register("2tann", (function(t, r) {
         },
         h = i.createContext(l);
     window.store = l
-})), n.register("b1Zbl", (function(r, i) {
-    e(r.exports, "default", (function() {
-        return g
-    }), (function(e) {
-        return g = e
-    }));
-    var o = n("5qiDF"),
-        s = n("bdXTJ"), // <-- ЭТО ИМПОРТ ГЕНЕРАТОРА СИДОВ. ОН НАМ НУЖЕН.
-        a = n("eR7Wf"),
-        u = n("dCyBd"),
-        c = n("cMNMS"),
-        l = n("5SHse"),
-        h = n("dxxNt"),
-        f = n("lM8va"),
-        d = n("awELi"),
-        p = function(e, t, r, n) {
-            var i, o = arguments.length,
-                s = o < 3 ? t : null === n ? n = Object.getOwnPropertyDescriptor(t, r) : n;
-            if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) s = Reflect.decorate(e, t, r, n);
-            else
-                for (var a = e.length - 1; a >= 0; a--)(i = e[a]) && (s = (o < 3 ? i(s) : o > 3 ? i(t, r, s) : i(t, r)) || s);
-            return o > 3 && s && Object.defineProperty(t, r, s), s
-        };
-    o.configure({
-        enforceActions: "always"
-    });
-    class m {
-        get levelsByRtp() {
-            const {
-                rtp: e
-            } = this.root.profileCommon;
-            return h.default[e] || h.default[d.defaultRTP]
-        }
-        constructor(e) {
-            this.gameId = u.default.get("gameId"), this.roundSeed = "", this.clientSeed = s.default(), this.serverSeed = void 0, this.nonce = 1, this.amount = "1.00", this.gameResult = null, this.payout = 0, this.coefficient = 0, this.gameResultResults = [], this.gameUi = !1, this.myBetsUpdater = 0, this.rows = u.default.get("saved_rows") || "8", this.level = "high", this.gameCreated = !1, this.win = {
-                index: 0,
-                time: Date.now()
-            }, this.winStack = {
-                index: 0,
-                time: 0,
-                color: 0
-            }, this.mockGame = () => {}, 
-            this.setWin = e => { this.win = e }, 
-            this.setWinStack = e => { this.winStack = e }, 
-            this.setGameUi = e => { this.gameUi = e }, 
-            this.changeRows = e => { this.rows = e, u.default.set("saved_rows", e) }, 
-            this.changeLevel = e => { this.level = e }, 
-            this.setMyBetsUpdater = () => { this.myBetsUpdater = this.myBetsUpdater + 1 }, 
-            this.startGame = async (e = 1) => { return this.mockGame(), await this.createGame(e) },
-            
-            this.createGame = async (e = 1) => {
-                console.log("!!! MOCKING createGame: Round is ready. !!!");
-                o.runInAction((() => {
-                    this.setGame("fake-game-id-on-create"), this.gameCreated = !0
-                }))
-            }, 
-
-            this.placeBetGame = async (e = 1) => {
-                const { profileCommon: { profile: { balance: t } }, uiCommon: { setAlert: r } } = this.root;
-                if (null === t || !(t <= 0 || t < Number(this.amount))) return await this.placeBet(e);
-                r({ title: "COMMON.PLACEBET.ERROR.3", type: "error" })
-            }, 
-            
-            // --- ФИНАЛЬНАЯ, РАБОЧАЯ ВЕРСИЯ ВЗЛОМА placeBet ---
-            this.placeBet = async (e = 1) => {
-                if (!this.gameCreated) return null;
-                
-                try {
-                    // !!! КЛЮЧЕВОЙ МОМЕНТ: ГЕНЕРИРУЕМ НОВЫЙ СИД ПЕРЕД КАЖДОЙ СТАВКОЙ !!!
-                    o.runInAction(() => {
-                        this.clientSeed = s.default(); // s.default() - это функция генерации сида
-                        this.nonce = (this.nonce || 0) + 1;
-                    });
-
-                    console.log(`!!! MOCKING BET with NEW clientSeed: ${this.clientSeed} !!!`);
-            
-                    // "Скармливаем" игре пустой результат, чтобы она сама все рассчитала на основе нового сида
-                    const fakeResponseData = {
-                        results: Array(e).fill(0) // Просто массив из N нулей, чтобы запустить N шариков
-                    };
-            
-                    await this.setGameResultResults(fakeResponseData);
-                    
-                    this.setMyBetsUpdater();
-                    await this.startGame();
-                    return "mocked-bet-ok";
-            
-                } catch (err) {
-                    console.log("placeBet error:", err);
-                    await this.startGame();
-                }
-            },
-
-            this.setGameResultResults = e => { this.gameResultResults = e.results; }, 
-            this.setGame = (e = "") => { this.gameId = e }, 
-            this.retreiveAmount = () => {
-                const { limit: { minBet: e, defaultBet: t }, profile: { currency: r } } = this.root.profileCommon, n = u.default.get(`saved_amount:${r}`);
-                this.amount = n && !isNaN(Number(n)) ? n : String(t || 10 * e)
-            }, 
-            this.setAmount = e => {
-                const { profile: { currency: t } } = this.root.profileCommon;
-                u.default.set(`saved_amount:${t}`, e), this.amount = String(e)
-            }, 
-            
-            this.root = e, o.makeObservable(this);
-            this.gameName = "turboplinko", this.gameServerId = this.gameName, this.root.profileCommon.auth(this.gameServerId).then((async () => {
-                this.retreiveAmount(), this.startGame()
-            }))
-        }
-    }
-    p([o.observable], m.prototype, "gameId", void 0), p([o.observable], m.prototype, "roundSeed", void 0), p([o.observable], m.prototype, "clientSeed", void 0), p([o.observable], m.prototype, "serverSeed", void 0), p([o.observable], m.prototype, "nonce", void 0), p([o.observable], m.prototype, "amount", void 0), p([o.observable], m.prototype, "gameResult", void 0), p([o.observable], m.prototype, "payout", void 0), p([o.observable], m.prototype, "coefficient", void 0), p([o.observable], m.prototype, "gameResultResults", void 0), p([o.observable], m.prototype, "gameUi", void 0), p([o.observable], m.prototype, "myBetsUpdater", void 0), p([o.observable], m.prototype, "rows", void 0), p([o.observable], m.prototype, "level", void 0), p([o.observable], m.prototype, "gameCreated", void 0), p([o.observable], m.prototype, "win", void 0), p([o.observable], m.prototype, "winStack", void 0), p([o.computed], m.prototype, "levelsByRtp", null), p([o.action], m.prototype, "mockGame", void 0), p([o.action], m.prototype, "setWin", void 0), p([o.action], m.prototype, "setWinStack", void 0), p([o.action], m.prototype, "setGameUi", void 0), p([o.action], m.prototype, "changeRows", void 0), p([o.action], m.prototype, "changeLevel", void 0), p([o.action], m.prototype, "setMyBetsUpdater", void 0), p([o.action], m.prototype, "startGame", void 0), p([o.action], m.prototype, "createGame", void 0), p([o.action], m.prototype, "placeBetGame", void 0), p([o.action], m.prototype, "placeBet", void 0), p([o.action], m.prototype, "setGameResultResults", void 0), p([o.action], m.prototype, "setGame", void 0), p([o.action], m.prototype, "retreiveAmount", void 0), p([o.action], m.prototype, "setAmount", void 0);
-    var g = m
-})); n.register("bdXTJ", (function(t, r) {
+})),  n.register("bdXTJ", (function(t, r) {
     e(t.exports, "default", (function() {
         return s
     }));
@@ -2268,94 +2156,345 @@ n.register("2tann", (function(t, r) {
                 variantType: null,
                 variantValue: "",
                 variants: 2
-            }, this.settings = {}, this.checkCookies = () => {}, 
-            this.setSplitTest = e => { this.splitTest = e }, 
-            this.setUserBlocked = e => { this.userBlocked = e }, 
-            this.setlanguage = e => { this.language = e }, 
-            this.setRates = e => { this.rates = e }, 
-            this.setUserAuthenticated = e => { console.log("setUserAuthenticated:", e), this.userAuthenticated = e }, 
-            this.setAuthInProgress = e => { this.authInProgress = e }, 
-            this.setCentrifugeAuthenticated = e => { this.centrifugeAuthenticated = e }, 
-            this.setRtp = e => { this.rtp = e }, 
-            this.logout = () => {}, 
-            
-            // =================================================================
-            // ========= НАЧАЛО НАШЕЙ МОДИФИКАЦИИ (ВЗЛОМ auth) =================
-            // =================================================================
-            this.auth = async e => {
-                this.setAuthInProgress(true);
-                console.log("!!! MOCKING AUTHENTICATION !!!");
-            
+            }, this.settings = {}, this.checkCookies = () => {
+                const e = g.cookieManager.getObjectCookie("splitTest");
+                e && (this.setSplitTest(e), null !== (null == e ? void 0 : e.variantValue) && "default" !== (null == e ? void 0 : e.variantType) && y.default({
+                    action: "experiment_running",
+                    attribute: `${null==e?void 0:e.variantValue}: ${null==e?void 0:e.variantType}`
+                }))
+            }, this.setSplitTest = e => {
+                this.splitTest = e
+            }, this.setUserBlocked = e => {
+                this.userBlocked = e
+            }, this.setlanguage = e => {
+                this.language = e
+            }, this.setRates = e => {
+                this.rates = e
+            }, this.setUserAuthenticated = e => {
+                console.log("setusrauth", e), this.userAuthenticated = e
+            }, this.setAuthInProgress = e => {
+                this.authInProgress = e
+            }, this.setCentrifugeAuthenticated = e => {
+                this.centrifugeAuthenticated = e
+            }, this.setRtp = e => {
+                this.rtp = e
+            }, this.logout = () => {
+                a.default.remove("apiKey"), a.default.remove("token"), a.default.remove("externalToken"), a.default.set("isDemo", !1), this.profile = x, this.limit = E, this.setUserAuthenticated(!1), this.setAuthInProgress(!1)
+            }, this.auth = async e => {
+                this.setAuthInProgress(!0);
+                const {
+                    search: t
+                } = document.location, r = new URLSearchParams(t), n = r.get("cid") || "", i = r.get("token") || "";
+                let s = r.get("locale") || "en";
+                s = s.toLowerCase(), this.language = s;
+                const l = "true" === r.get("demo"),
+                    h = a.default.get("externalToken");
+                ("false" === a.default.get("isDemo") && !i.length || i && h && h !== i) && a.default.remove("userBetsOrder");
+                const f = r.get("sub_partner_id") || "";
+                [
+                    ["apiKey", n],
+                    ["externalToken", i],
+                    ["locale", s || "en"]
+                ].forEach((([e, t]) => t && a.default.set(e, t)));
+                const d = r.get("cid");
+                var p;
+                p = r.get("sub_partner_id"), null != d || c.demoCID;
                 try {
-                    // Имитируем успешную авторизацию
-                    this.setUserAuthenticated(true);
-                    this.setCentrifugeAuthenticated(true);
-                    this.setAuthInProgress(false);
-            
-                    // Устанавливаем фейковые, но рабочие данные профиля
-                    this.setProfile({
-                        apiKey: "fake-cid",
-                        token: "fake-token",
-                        externalToken: "fake-external-token",
-                        playerId: "fake-player-id",
-                        id: "fake-player-id",
-                        balance: 99999,
-                        balanceLoad: true,
-                        currency: "USD",
-                        currencySign: "$",
-                        isDemo: true,
-                        name: "Player",
-                        subPartnerId: "",
-                        freebetsVerified: false,
-                        freebetsType: null,
-                        rounding: 2
-                    });
-            
-                    // Устанавливаем фейковые лимиты
-                    this.setLimit({
-                        defaultBet: 1,
-                        currency: "USD",
-                        currencyId: 0,
-                        maxBet: 100,
-                        maxWin: 1000,
-                        minBet: 0.1
-                    });
-            
+                    let t = "true" === a.default.get("isDemo"),
+                        s = a.default.get("token") || i,
+                        h = a.default.get("apiKey") || n;
+                    const d = async (t, n, i) => {
+                        let s;
+                        const a = await m.default.load(),
+                            {
+                                visitorId: l
+                            } = await a.get();
+                        try {
+                            if (t && (!n || !n.length)) return;
+                            s = await u.getProfile(o.objectSpread({
+                                token: t,
+                                cid: n,
+                                gameId: e,
+                                visitorId: l
+                            }, i && {
+                                currency: i
+                            }))
+                        } catch (t) {
+                            var h;
+                            if (null == t || null === (h = t.response) || void 0 === h ? void 0 : h.status) {
+                                const {
+                                    status: e
+                                } = t.response;
+                                if (e && 408 === e) {
+                                    const {
+                                        setAlert: e
+                                    } = this.root.uiCommon;
+                                    e({
+                                        type: "error",
+                                        title: "COMMON.PLACEBET.ERROR.ATTENTION",
+                                        text: "COMMON.PROFILE.ERROR.TIMEOUT"
+                                    })
+                                }
+                            }
+                            if ("false" === r.get("demo") || n.length && n !== c.demoCID) return;
+                            s = await u.getProfile(o.objectSpread({
+                                token: "",
+                                cid: c.demoCID,
+                                gameId: e,
+                                visitorId: l
+                            }, i && {
+                                currency: i
+                            }))
+                        }
+                        return s
+                    };
+                    let p;
+                    if (!i || l) {
+                        console.log("CREATE DEMO"), n !== c.demoCID && h !== c.demoCID && (a.default.remove("apiKey"), a.default.remove("token"), a.default.remove("externalToken"));
+                        let t = a.default.get("externalToken") || "";
+                        h = c.demoCID, p = "ateshtoplari" === e || "meyvekulesi" === e || "superplinko" === e || "kunduzunmaceras" === e ? await d(t, h, "try") : await d(t, h), p && (a.default.set("isDemo", !0), a.default.set("apiKey", h), s = p.data.token)
+                    } else {
+                        a.default.set("isDemo", String(l));
+                        let t = a.default.get("externalToken") || "";
+                        const r = l ? "" : i || t;
+                        p = "ateshtoplari" === e || "meyvekulesi" === e ? await d(r, h, "try") : await d(r, h)
+                    }
+                    if (!p) return this.setCentrifugeAuthenticated(!0), void this.setAuthInProgress(!1);
+                    const {
+                        data: g
+                    } = p;
+                    this.checkTokenForRtp(g.token);
+                    const y = `balance#${g.sub}`;
+                    await this.root.store.centrifuge.setToken(g.token), await this.root.store.centrifuge.connect(), this.setUserAuthenticated(!0), this.setCentrifugeAuthenticated(!0), this.setAuthInProgress(!1), await this.root.store.centrifuge.subscribe(y, (({
+                        data: e
+                    }) => {
+                        const {
+                            balance: t,
+                            logout: r
+                        } = e;
+                        this.setBalance(t), r && (this.logout(), this.setUserBlocked(!0))
+                    }));
+                    const {
+                        availableCurrencies: _,
+                        balance: x,
+                        currency: E,
+                        currencySign: w,
+                        id: S,
+                        isTest: T,
+                        playerName: A,
+                        token: M,
+                        externalToken: R,
+                        limits: O,
+                        freebetsVerified: I,
+                        freebetsType: P
+                    } = g;
+                    a.default.set("token", M), a.default.set("externalToken", R), a.default.set("playerId", S), this.setProfile(o.objectSpread({}, g, {
+                        apiKey: h,
+                        token: M,
+                        externalToken: R,
+                        playerId: S,
+                        id: S,
+                        balance: x,
+                        balanceLoad: !0,
+                        currency: E,
+                        currencySign: w,
+                        isDemo: t || T,
+                        name: A,
+                        subPartnerId: f,
+                        freebetsVerified: I,
+                        freebetsType: P,
+                        rounding: g.rounding
+                    })), v.default(g.splitTest), b.default(g.splitTest), O ? this.setLimit(O) : await this.fetchLimits(), this.connectPingSocket(M, h), this.fetchRates(), this.fetchVersion()
                 } catch (e) {
-                    this.setAuthInProgress(false);
-                    console.log("Auth mock error:", e);
+                    ("false" === r.get("demo") || n.length && n !== c.demoCID) && this.logout(), this.setAuthInProgress(!1), console.log("Auth error:", e)
                 }
-            },
-            // =================================================================
-            // ========= КОНЕЦ НАШЕЙ МОДИФИКАЦИИ =============================
-            // =================================================================
-
-            this.connectPingSocket = async (e, t) => {}, 
-            this.setVersion = e => { this.version = e }, 
-            this.fetchVersion = async () => {}, 
-            this.fetchLimits = async () => {}, 
-            this.fetchRates = async () => {}, 
-            this.fetchRules = async () => {}, 
-            this.updateBalance = async () => {}, 
-            this.checkTokenForRtp = e => {}, 
-            this.setProfile = e => {
-                this.profile = e
+            }, this.connectPingSocket = async (e, t) => {
+                if (!t || !["r88", "r88-qa", "r88-release-beta", "r88-demo", "r88-release"].includes(t)) return;
+                let r, n = 0,
+                    i = !1;
+                const o = `wss://${document.location.host}/ping`,
+                    s = () => {
+                        r = new WebSocket(o, e), r.onopen = () => {
+                            i = !0, console.log("opened ping connection")
+                        }, r.onmessage = () => {}, r.onclose = () => {
+                            n < 3 && !i && (s(), d.default(1), n++)
+                        }
+                    };
+                s()
+            }, this.setVersion = e => {
+                console.log(e, "version"), this.version = e, a.default.set("gameVersionLs", JSON.stringify(e)), a.default.set("versionDate", Date.now())
+            }, this.fetchVersion = async () => {
+                const e = a.default.get("versionDate"),
+                    t = a.default.get("gameVersionLs");
+                try {
+                    if (e && Date.now() - Number(e) < 864e5 && t) {
+                        const e = () => {
+                            a.default.remove("gameVersionLs"), a.default.remove("versionDate")
+                        };
+                        try {
+                            const r = JSON.parse(t);
+                            r.rng && r.game ? this.setVersion(r) : e()
+                        } catch (t) {
+                            e()
+                        }
+                        return
+                    }
+                    const {
+                        data: r
+                    } = await u.getVersion({
+                        gameId: this.root.store.gameServerId
+                    });
+                    if (!(null == r ? void 0 : r.server)) return;
+                    const {
+                        server: n
+                    } = r;
+                    if (Array.isArray(n)) {
+                        const e = n.find((e => e.rng && e.version && e.name && "game-server" === e.name));
+                        e && this.setVersion({
+                            rng: e.rng,
+                            game: e.version
+                        })
+                    } else "object" == typeof n && null !== n && n.rng && n.version && this.setVersion({
+                        rng: n.rng,
+                        game: n.version
+                    })
+                } catch (e) {
+                    console.log("Versoin error:", e)
+                }
+            }, this.fetchLimits = async () => {
+                const {
+                    apiKey: e,
+                    currency: t,
+                    subPartnerId: r
+                } = this.profile, n = {
+                    currency: t
+                };
+                r && (n.sub_partner_id = r);
+                try {
+                    const {
+                        data: t
+                    } = await u.getLimit({
+                        headers: {
+                            cid: e
+                        },
+                        params: n
+                    });
+                    this.setLimit(t)
+                } catch (e) {
+                    console.log("Auth error:", e)
+                }
+            }, this.fetchRates = async () => {
+                const {
+                    apiKey: e,
+                    token: t
+                } = this.profile;
+                try {
+                    const {
+                        data: r
+                    } = await u.getRates({
+                        headers: {
+                            cid: e,
+                            token: t
+                        }
+                    });
+                    this.setRates(r)
+                } catch (e) {
+                    console.log("Auth error:", e)
+                }
+            }, this.fetchRules = async () => {
+                const {
+                    gameName: e
+                } = this.root.store, t = h.default(e);
+                try {
+                    const e = a.default.get(`i18nVersion-rules:${this.language}`) || null,
+                        {
+                            data: r
+                        } = await u.getTranslates({
+                            projectId: "6270f7428c3cbe68ed98c8a7",
+                            version: e,
+                            locale: this.language
+                        }),
+                        n = r[t],
+                        i = {
+                            rules: n,
+                            rulesShort: r[`${t}_short`]
+                        };
+                    return r.i18nVersion === e ? this.getLocalRules(this.language) : (a.default.set(`i18next_res_${this.language}-rules`, JSON.stringify(i)), a.default.set(`i18nVersion-rules:${this.language}`, r.i18nVersion), i)
+                } catch (e) {
+                    console.log("Auth error:", e)
+                }
+            }, this.updateBalance = async () => {
+                let e = a.default.get("externalToken"),
+                    t = a.default.get("apiKey");
+                const r = await u.default.post("/profile", {
+                        cid: t,
+                        token: e
+                    }),
+                    {
+                        data: {
+                            balance: n
+                        }
+                    } = r;
+                this.setBalance(n)
+            }, this.checkTokenForRtp = e => {
+                const r = t(f).decode(e);
+                r && "object" == typeof r && r.config && r.config.rtp && this.setRtp(r.config.rtp)
+            }, this.setProfile = e => {
+                var t;
+                const {
+                    currencySign: r
+                } = e;
+                if (r && r.length > 1 && "mBTC" !== r && (e.currencySign = r.toUpperCase()), this.profile = e, e.splitTest && null === (null === (t = this.splitTest) || void 0 === t ? void 0 : t.variantType)) {
+                    var n, i, o, s, a, u, c;
+                    const t = 18e5,
+                        r = 108e5;
+                    this.setSplitTest(e.splitTest), v.default(e.splitTest), b.default(e.splitTest), null !== (null === (n = e.splitTest) || void 0 === n ? void 0 : n.variantValue) && "default" !== (null === (i = e.splitTest) || void 0 === i ? void 0 : i.variantType) && y.default({
+                        action: "experiment_start",
+                        attribute: `${null===(o=e.splitTest)||void 0===o?void 0:o.variantValue}: ${null===(s=e.splitTest)||void 0===s?void 0:s.variantType}`
+                    }), g.cookieManager.setObjectCookie("splitTest", "default" === (null === (a = e.splitTest) || void 0 === a ? void 0 : a.variantType) || "control" === (null === (u = e.splitTest) || void 0 === u ? void 0 : u.variantType) ? e.splitTest : 0, "default" === (null === (c = e.splitTest) || void 0 === c ? void 0 : c.variantType) ? t : r)
+                }
             }, this.setBalance = e => {
                 this.profile = o.objectSpread({}, this.profile, {
                     balance: p.default(e, this.profile.rounding)
                 })
             }, this.setLimit = e => {
                 this.limit = e
-            }, this.setPlayerName = async e => {}, 
-            this.setIsChangedNickname = e => {
+            }, this.setPlayerName = async e => {
+                const {
+                    token: t,
+                    apiKey: r
+                } = this.profile;
+                try {
+                    const n = await u.putPlayerName({
+                        headers: {
+                            authorization: t,
+                            cid: r
+                        },
+                        name: e
+                    });
+                    this.profile.name = n.data.nickname, this.changedNickname = n.data.nickname, this.setIsChangedNickname(!0), y.default({
+                        parameters: null
+                    }), y.default({
+                        action: "name_changed",
+                        parameters: {
+                            value: n.data.nickname
+                        }
+                    })
+                } catch (e) {
+                    var n;
+                    const {
+                        response: t
+                    } = e || {}, r = (null == t || null === (n = t.data) || void 0 === n ? void 0 : n.message) || "error message";
+                    throw new Error(r)
+                }
+            }, this.setIsChangedNickname = e => {
                 this.isChangedNickname = e
-            }, 
-            this.root = e, s.makeObservable(this), this.checkCookies()
+            }, this.root = e, s.makeObservable(this), this.checkCookies()
         }
     }
     _([s.observable], w.prototype, "profile", void 0), _([s.observable], w.prototype, "limit", void 0), _([s.observable], w.prototype, "rtp", void 0), _([s.observable], w.prototype, "centrifugeAuthenticated", void 0), _([s.observable], w.prototype, "changedNickname", void 0), _([s.observable], w.prototype, "isChangedNickname", void 0), _([s.observable], w.prototype, "rates", void 0), _([s.observable], w.prototype, "statistics", void 0), _([s.observable], w.prototype, "language", void 0), _([s.observable], w.prototype, "userAuthenticated", void 0), _([s.observable], w.prototype, "userBlocked", void 0), _([s.observable], w.prototype, "authInProgress", void 0), _([s.observable], w.prototype, "version", void 0), _([s.observable], w.prototype, "splitTest", void 0), _([s.observable], w.prototype, "settings", void 0), _([s.computed], w.prototype, "sign", null), _([s.action], w.prototype, "setSplitTest", void 0), _([s.action], w.prototype, "setUserBlocked", void 0), _([s.action], w.prototype, "setlanguage", void 0), _([s.action], w.prototype, "setRates", void 0), _([s.action], w.prototype, "setUserAuthenticated", void 0), _([s.action], w.prototype, "setAuthInProgress", void 0), _([s.action], w.prototype, "setCentrifugeAuthenticated", void 0), _([s.action], w.prototype, "setRtp", void 0), _([s.action], w.prototype, "logout", void 0), _([s.action], w.prototype, "auth", void 0), _([s.action], w.prototype, "connectPingSocket", void 0), _([s.action], w.prototype, "setVersion", void 0), _([s.action], w.prototype, "fetchVersion", void 0), _([s.action], w.prototype, "fetchLimits", void 0), _([s.action], w.prototype, "fetchRates", void 0), _([s.action], w.prototype, "fetchRules", void 0), _([s.action], w.prototype, "updateBalance", void 0), _([s.action], w.prototype, "checkTokenForRtp", void 0), _([s.action], w.prototype, "setProfile", void 0), _([s.action], w.prototype, "setBalance", void 0), _([s.action], w.prototype, "setLimit", void 0), _([s.action], w.prototype, "setPlayerName", void 0), _([s.action], w.prototype, "setIsChangedNickname", void 0);
     var S = w
-})); n.register("2M1Pk", (function(t, r) {
+})), n.register("2M1Pk", (function(t, r) {
     function n(e) {
         const {
             pathname: t
