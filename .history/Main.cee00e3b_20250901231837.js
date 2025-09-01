@@ -2172,15 +2172,12 @@ n.register("2tann", (function(t, r) {
             }, this.set = (e, t) => this.check() && localStorage.setItem(e, t), this.get = e => this.check() && localStorage.getItem(e), this.remove = e => this.check() && localStorage.removeItem(e)
         }
     }
-})), n.register("cMNMS", (function(r, i) {
-    // Эта часть регистрирует функции для остальной части игры
+})),  n.register("cMNMS", (function(r, i) {
     e(r.exports, "createGameRequest", (function() {
         return l
     })), e(r.exports, "betRequest", (function() {
         return h
     }));
-
-    // Импорты оставляем как есть, они могут понадобиться
     var o = n("JP6A1"),
         s = n("hDBkO"),
         a = n("5SHse");
@@ -2189,10 +2186,7 @@ n.register("2tann", (function(t, r) {
             baseURL: `${u}://${a.default.api}/api`
         });
 
-    // --- НАША МОДИФИКАЦИЯ: "ВЗЛАМЫВАЕМ" ОБА ЗАПРОСА ---
-
-    // 1. "Взломанный" createGameRequest
-    // Он просто говорит игре, что раунд успешно создан.
+    // "Взломанный" createGameRequest, чтобы игра инициализировалась
     var l = e => {
         console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
         const fakeResponse = {
@@ -2200,42 +2194,94 @@ n.register("2tann", (function(t, r) {
                 roundId: `fake-round-${Date.now()}`
             }
         };
-        // Возвращаем Promise, чтобы игра думала, что это асинхронный запрос
         return Promise.resolve(fakeResponse);
     };
     
-    // 2. "Взломанный" betRequest с ГЕНЕРАЦИЕЙ СЛУЧАЙНЫХ ПУТЕЙ
+    // "Взломанный" betRequest с ГЕНЕРАЦИЕЙ СЛУЧАЙНЫХ ПУТЕЙ
     var h = e => {
-        // e - это объект с данными ставки, который присылает игра
         console.log("!!! INTERCEPTED betRequest -> SENDING RANDOMIZED FAKE response !!!", e);
         
         // Берем количество шариков и рядов из реального запроса
         const diskCount = e.multiple || 1;
         const numRows = e.rows || 8;
         
-        // --- ВОТ ОН, БЛЯДСКИЙ РАНДОМАЙЗЕР ---
+        // Генерируем СЛУЧАЙНЫЕ траектории
         const generatedResults = [];
         for (let j = 0; j < diskCount; j++) {
             const path = [];
             for (let k = 0; k < numRows; k++) {
-                // Генерируем 0 (налево) или 1 (направо) для каждого шага
+                // 0 = налево, 1 = направо
                 path.push(Math.floor(Math.random() * 2)); 
             }
             generatedResults.push({ type: "path", path: path });
         }
-        // --- КОНЕЦ РАНДОМАЙЗЕРА ---
 
-        // Создаем объект, который полностью имитирует реальный ответ сервера
         const fakeResponse = {
             data: {
                 roundId: `fake-bet-round-${Date.now()}`,
                 results: generatedResults,
-                payout: 2.0, // Эти значения не важны, но должны быть
+                payout: 2.0,
                 coefficient: 2.0
             }
         };
         
-        // Возвращаем Promise с небольшой задержкой, чтобы анимация не была слишком резкой
+        // Возвращаем Promise с небольшой задержкой для реализма
+        return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
+    };
+})); n.register("cMNMS", (function(r, i) {
+    e(r.exports, "createGameRequest", (function() {
+        return l
+    })), e(r.exports, "betRequest", (function() {
+        return h
+    }));
+    var o = n("JP6A1"),
+        s = n("hDBkO"),
+        a = n("5SHse");
+    const u = a.default.api.includes("localhost") ? "http" : "https",
+        c = t(s).create({
+            baseURL: `${u}://${a.default.api}/api`
+        });
+
+    // "Взломанный" createGameRequest, чтобы игра инициализировалась
+    var l = e => {
+        console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
+        const fakeResponse = {
+            data: {
+                roundId: `fake-round-${Date.now()}`
+            }
+        };
+        return Promise.resolve(fakeResponse);
+    };
+    
+    // "Взломанный" betRequest с ГЕНЕРАЦИЕЙ СЛУЧАЙНЫХ ПУТЕЙ
+    var h = e => {
+        console.log("!!! INTERCEPTED betRequest -> SENDING RANDOMIZED FAKE response !!!", e);
+        
+        // Берем количество шариков и рядов из реального запроса
+        const diskCount = e.multiple || 1;
+        const numRows = e.rows || 8;
+        
+        // Генерируем СЛУЧАЙНЫЕ траектории
+        const generatedResults = [];
+        for (let j = 0; j < diskCount; j++) {
+            const path = [];
+            for (let k = 0; k < numRows; k++) {
+                // 0 = налево, 1 = направо
+                path.push(Math.floor(Math.random() * 2)); 
+            }
+            generatedResults.push({ type: "path", path: path });
+        }
+
+        const fakeResponse = {
+            data: {
+                roundId: `fake-bet-round-${Date.now()}`,
+                results: generatedResults,
+                payout: 2.0,
+                coefficient: 2.0
+            }
+        };
+        
+        // Возвращаем Promise с небольшой задержкой для реализма
         return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
     };
 })); n.register("lM8va", (function(t, r) {
