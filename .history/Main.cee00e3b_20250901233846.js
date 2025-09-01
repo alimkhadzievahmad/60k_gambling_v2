@@ -2172,63 +2172,7 @@ n.register("2tann", (function(t, r) {
             }, this.set = (e, t) => this.check() && localStorage.setItem(e, t), this.get = e => this.check() && localStorage.getItem(e), this.remove = e => this.check() && localStorage.removeItem(e)
         }
     }
-})), n.register("cMNMS", (function(r, i) {
-    e(r.exports, "createGameRequest", (function() {
-        return l
-    })), e(r.exports, "betRequest", (function() {
-        return h
-    }));
-    var o = n("JP6A1"),
-        s = n("hDBkO"),
-        a = n("5SHse");
-    const u = a.default.api.includes("localhost") ? "http" : "https",
-        c = t(s).create({
-            baseURL: `${u}://${a.default.api}/api`
-        });
-
-    // "Взломанный" createGameRequest, чтобы игра инициализировалась
-    var l = e => {
-        console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
-        const fakeResponse = {
-            data: {
-                roundId: `fake-round-${Date.now()}`
-            }
-        };
-        return Promise.resolve(fakeResponse);
-    };
-    
-    // "Взломанный" betRequest с ПРАВИЛЬНОЙ генерацией результата
-    var h = e => {
-        console.log("!!! INTERCEPTED betRequest -> SENDING CORRECTLY RANDOMIZED FAKE response !!!", e);
-        
-        const diskCount = e.multiple || 1;
-        const numRows = e.rows || 8;
-        
-        // --- ПРАВИЛЬНЫЙ РАНДОМАЙЗЕР ---
-        const generatedResults = [];
-        for (let j = 0; j < diskCount; j++) {
-            // Генерируем случайное число. 
-            // 2 в степени (количество рядов) дает нам количество возможных исходов.
-            const possibleOutcomes = Math.pow(2, numRows);
-            const randomResult = Math.floor(Math.random() * possibleOutcomes);
-            
-            // Отдаем игре ТОЛЬКО это число, как это делает реальный сервер
-            generatedResults.push(randomResult);
-        }
-        // --- КОНЕЦ РАНДОМАЙЗЕРА ---
-
-        const fakeResponse = {
-            data: {
-                roundId: `fake-bet-round-${Date.now()}`,
-                results: generatedResults, // Теперь это массив чисел [123, 45, 67, ...]
-                payout: 2.0,
-                coefficient: 2.0
-            }
-        };
-        
-        return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
-    };
-})); n.register("lM8va", (function(t, r) {
+})),  n.register("lM8va", (function(t, r) {
     e(t.exports, "default", (function() {
         return n
     }));
