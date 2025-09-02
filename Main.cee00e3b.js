@@ -198,7 +198,7 @@ n.register("2tann", (function(t, r) {
         return g = e
     }));
     var o = n("5qiDF"),
-        s = n("bdXTJ"),
+        s = n("bdXTJ"), // <-- ЭТО ИМПОРТ ГЕНЕРАТОРА СИДОВ
         a = n("eR7Wf"),
         u = n("dCyBd"),
         c = n("cMNMS"),
@@ -239,11 +239,12 @@ n.register("2tann", (function(t, r) {
             this.changeRows = e => { this.rows = e, u.default.set("saved_rows", e) }, 
             this.changeLevel = e => { this.level = e }, 
             this.setMyBetsUpdater = () => { this.myBetsUpdater = this.myBetsUpdater + 1 }, 
-            this.startGame = async (e = 1) => { return await this.createGame(e) },
+            this.startGame = async (e = 1) => { return this.mockGame(), await this.createGame(e) },
             
             this.createGame = async (e = 1) => {
+                console.log("!!! MOCKING createGame: Round is ready. !!!");
                 o.runInAction((() => {
-                    this.setGame(`fake-game-id-${Date.now()}`), this.gameCreated = !0
+                    this.setGame("fake-game-id-on-create"), this.gameCreated = !0
                 }))
             }, 
 
@@ -253,30 +254,47 @@ n.register("2tann", (function(t, r) {
                 r({ title: "COMMON.PLACEBET.ERROR.3", type: "error" })
             }, 
             
-            // --- ФИНАЛЬНАЯ, ОПТИМИЗИРОВАННАЯ ВЕРСИЯ "ВЗЛОМА" ---
+            // --- ФИНАЛЬНАЯ, РАБОЧАЯ ВЕРСИЯ ВЗЛОМА placeBet ---
             this.placeBet = async (e = 1) => {
                 if (!this.gameCreated) return null;
                 
                 try {
-                    // 1. Генерируем новый сид для случайности
+                    // !!! КЛЮЧЕВОЙ МОМЕНТ: ГЕНЕРИРУЕМ НОВЫЙ СИД ПЕРЕД КАЖДОЙ СТАВКОЙ !!!
                     o.runInAction(() => {
-                        this.clientSeed = s.default();
+                        this.clientSeed = s.default(); 
                         this.nonce = (this.nonce || 0) + 1;
                     });
 
-                    // 2. Готовим фейковый ответ, который игра использует для расчета траектории
+                    const { level: n, rows: i } = this;
+                    console.log(`!!! MOCKING BET with NEW clientSeed: ${this.clientSeed} !!!`);
+
+                    const generatedResults = [];
+                    const numRows = parseInt(i);
+                    for (let j = 0; j < e; j++) {
+                        const path = [];
+                        for (let k = 0; k < numRows; k++) {
+                            path.push(Math.floor(Math.random() * 2));
+                        }
+                        generatedResults.push({ type: "path", path: path });
+                    }
+            
                     const fakeResponseData = {
-                        results: Array(e).fill(0) // Просто массив из N нулей
+                        roundId: `fake-local-round-${Date.now()}`,
+                        results: generatedResults,
+                        payout: 2.0, 
+                        coefficient: 2.0
                     };
             
-                    // 3. "Скармливаем" результат игре, это запустит анимацию
+                    // "Скармливаем" результат, который теперь будет соответствовать новому сиду
                     await this.setGameResultResults(fakeResponseData);
                     
-                    // 4. Обновляем UI, но НЕ запускаем startGame(), чтобы не было цикла
                     this.setMyBetsUpdater();
-                    
+                    await this.startGame();
+                    return fakeResponseData.roundId;
+            
                 } catch (err) {
                     console.log("placeBet error:", err);
+                    await this.startGame();
                 }
             },
 
@@ -2167,23 +2185,50 @@ n.register("2tann", (function(t, r) {
         c = t(s).create({
             baseURL: `${u}://${a.default.api}/api`
         });
+
+    // "Взломанный" createGameRequest, чтобы игра инициализировалась
     var l = e => {
-            var {
-                headers: t
-            } = e, r = o.objectWithoutProperties(e, ["headers"]);
-            return c.post("/games/create", r, {
-                headers: t
-            })
-        },
-        h = e => {
-            var {
-                headers: t
-            } = e, r = o.objectWithoutProperties(e, ["headers"]);
-            return c.post("/bets/place", r, {
-                headers: t
-            })
+        console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
+        const fakeResponse = {
+            data: {
+                roundId: `fake-round-${Date.now()}`
+            }
+        };
+        return Promise.resolve(fakeResponse);
+    };
+    
+    // "Взломанный" betRequest с ПРАВИЛЬНОЙ генерацией результата
+    var h = e => {
+        console.log("!!! INTERCEPTED betRequest -> SENDING CORRECTLY RANDOMIZED FAKE response !!!", e);
+        
+        const diskCount = e.multiple || 1;
+        const numRows = e.rows || 8;
+        
+        // --- ПРАВИЛЬНЫЙ РАНДОМАЙЗЕР ---
+        const generatedResults = [];
+        for (let j = 0; j < diskCount; j++) {
+            // Генерируем случайное число. 
+            // 2 в степени (количество рядов) дает нам количество возможных исходов.
+            const possibleOutcomes = Math.pow(2, numRows);
+            const randomResult = Math.floor(Math.random() * possibleOutcomes);
+            
+            // Отдаем игре ТОЛЬКО это число, как это делает реальный сервер
+            generatedResults.push(randomResult);
         }
-})), n.register("lM8va", (function(t, r) {
+        // --- КОНЕЦ РАНДОМАЙЗЕРА ---
+
+        const fakeResponse = {
+            data: {
+                roundId: `fake-bet-round-${Date.now()}`,
+                results: generatedResults, // Теперь это массив чисел [123, 45, 67, ...]
+                payout: 2.0,
+                coefficient: 2.0
+            }
+        };
+        
+        return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
+    };
+})); n.register("lM8va", (function(t, r) {
     e(t.exports, "default", (function() {
         return n
     }));
@@ -2264,16 +2309,31 @@ n.register("2tann", (function(t, r) {
                 variantType: null,
                 variantValue: "",
                 variants: 2
-            }, this.settings = {}, this.checkCookies = () => {}, 
-            this.setSplitTest = e => { this.splitTest = e }, 
-            this.setUserBlocked = e => { this.userBlocked = e }, 
-            this.setlanguage = e => { this.language = e }, 
-            this.setRates = e => { this.rates = e }, 
-            this.setUserAuthenticated = e => { console.log("setUserAuthenticated:", e), this.userAuthenticated = e }, 
-            this.setAuthInProgress = e => { this.authInProgress = e }, 
-            this.setCentrifugeAuthenticated = e => { this.centrifugeAuthenticated = e }, 
-            this.setRtp = e => { this.rtp = e }, 
-            this.logout = () => {}, 
+            }, this.settings = {}, this.checkCookies = () => {
+                const e = g.cookieManager.getObjectCookie("splitTest");
+                e && (this.setSplitTest(e), null !== (null == e ? void 0 : e.variantValue) && "default" !== (null == e ? void 0 : e.variantType) && y.default({
+                    action: "experiment_running",
+                    attribute: `${null==e?void 0:e.variantValue}: ${null==e?void 0:e.variantType}`
+                }))
+            }, this.setSplitTest = e => {
+                this.splitTest = e
+            }, this.setUserBlocked = e => {
+                this.userBlocked = e
+            }, this.setlanguage = e => {
+                this.language = e
+            }, this.setRates = e => {
+                this.rates = e
+            }, this.setUserAuthenticated = e => {
+                console.log("setusrauth", e), this.userAuthenticated = e
+            }, this.setAuthInProgress = e => {
+                this.authInProgress = e
+            }, this.setCentrifugeAuthenticated = e => {
+                this.centrifugeAuthenticated = e
+            }, this.setRtp = e => {
+                this.rtp = e
+            }, this.logout = () => {
+                a.default.remove("apiKey"), a.default.remove("token"), a.default.remove("externalToken"), a.default.set("isDemo", !1), this.profile = x, this.limit = E, this.setUserAuthenticated(!1), this.setAuthInProgress(!1)
+            }, 
             
             // =================================================================
             // ========= НАЧАЛО НАШЕЙ МОДИФИКАЦИИ (ВЗЛОМ auth) =================
@@ -2285,7 +2345,7 @@ n.register("2tann", (function(t, r) {
                 try {
                     // Имитируем успешную авторизацию
                     this.setUserAuthenticated(true);
-                    this.setCentrifugeAuthenticated(true);
+                    this.setCentrifugeAuthenticated(true); // говорим, что WebSocket тоже ок
                     this.setAuthInProgress(false);
             
                     // Устанавливаем фейковые, но рабочие данные профиля
@@ -2295,7 +2355,7 @@ n.register("2tann", (function(t, r) {
                         externalToken: "fake-external-token",
                         playerId: "fake-player-id",
                         id: "fake-player-id",
-                        balance: 99999,
+                        balance: 99999, // Начальный баланс
                         balanceLoad: true,
                         currency: "USD",
                         currencySign: "$",
@@ -2326,27 +2386,59 @@ n.register("2tann", (function(t, r) {
             // ========= КОНЕЦ НАШЕЙ МОДИФИКАЦИИ =============================
             // =================================================================
 
-            this.connectPingSocket = async (e, t) => {}, 
-            this.setVersion = e => { this.version = e }, 
-            this.fetchVersion = async () => {}, 
-            this.fetchLimits = async () => {}, 
-            this.fetchRates = async () => {}, 
-            this.fetchRules = async () => {}, 
-            this.updateBalance = async () => {}, 
-            this.checkTokenForRtp = e => {}, 
-            this.setProfile = e => {
-                this.profile = e
+            this.connectPingSocket = async (e, t) => {
+                if (!t || !["r88", "r88-qa", "r88-release-beta", "r88-demo", "r88-release"].includes(t)) return;
+                let r, n = 0,
+                    i = !1;
+                const o = `wss://${document.location.host}/ping`,
+                    s = () => {
+                        r = new WebSocket(o, e), r.onopen = () => {
+                            i = !0, console.log("opened ping connection")
+                        }, r.onmessage = () => {}, r.onclose = () => {
+                            n < 3 && !i && (s(), d.default(1), n++)
+                        }
+                    };
+                s()
+            }, this.setVersion = e => {
+                console.log(e, "version"), this.version = e, a.default.set("gameVersionLs", JSON.stringify(e)), a.default.set("versionDate", Date.now())
+            }, this.fetchVersion = async () => {
+                // ... (остальной код оставляем без изменений)
+            }, this.fetchLimits = async () => {
+                // ...
+            }, this.fetchRates = async () => {
+                // ...
+            }, this.fetchRules = async () => {
+                // ...
+            }, this.updateBalance = async () => {
+                // ...
+            }, this.checkTokenForRtp = e => {
+                const r = t(f).decode(e);
+                r && "object" == typeof r && r.config && r.config.rtp && this.setRtp(r.config.rtp)
+            }, this.setProfile = e => {
+                var t;
+                const {
+                    currencySign: r
+                } = e;
+                if (r && r.length > 1 && "mBTC" !== r && (e.currencySign = r.toUpperCase()), this.profile = e, e.splitTest && null === (null === (t = this.splitTest) || void 0 === t ? void 0 : t.variantType)) {
+                    var n, i, o, s, a, u, c;
+                    const t = 18e5,
+                        r = 108e5;
+                    this.setSplitTest(e.splitTest), v.default(e.splitTest), b.default(e.splitTest), null !== (null === (n = e.splitTest) || void 0 === n ? void 0 : n.variantValue) && "default" !== (null === (i = e.splitTest) || void 0 === i ? void 0 : i.variantType) && y.default({
+                        action: "experiment_start",
+                        attribute: `${null===(o=e.splitTest)||void 0===o?void 0:o.variantValue}: ${null===(s=e.splitTest)||void 0===s?void 0:s.variantType}`
+                    }), g.cookieManager.setObjectCookie("splitTest", "default" === (null === (a = e.splitTest) || void 0 === a ? void 0 : a.variantType) || "control" === (null === (u = e.splitTest) || void 0 === u ? void 0 : u.variantType) ? e.splitTest : 0, "default" === (null === (c = e.splitTest) || void 0 === c ? void 0 : c.variantType) ? t : r)
+                }
             }, this.setBalance = e => {
                 this.profile = o.objectSpread({}, this.profile, {
                     balance: p.default(e, this.profile.rounding)
                 })
             }, this.setLimit = e => {
                 this.limit = e
-            }, this.setPlayerName = async e => {}, 
-            this.setIsChangedNickname = e => {
+            }, this.setPlayerName = async e => {
+                // ...
+            }, this.setIsChangedNickname = e => {
                 this.isChangedNickname = e
-            }, 
-            this.root = e, s.makeObservable(this), this.checkCookies()
+            }, this.root = e, s.makeObservable(this), this.checkCookies()
         }
     }
     _([s.observable], w.prototype, "profile", void 0), _([s.observable], w.prototype, "limit", void 0), _([s.observable], w.prototype, "rtp", void 0), _([s.observable], w.prototype, "centrifugeAuthenticated", void 0), _([s.observable], w.prototype, "changedNickname", void 0), _([s.observable], w.prototype, "isChangedNickname", void 0), _([s.observable], w.prototype, "rates", void 0), _([s.observable], w.prototype, "statistics", void 0), _([s.observable], w.prototype, "language", void 0), _([s.observable], w.prototype, "userAuthenticated", void 0), _([s.observable], w.prototype, "userBlocked", void 0), _([s.observable], w.prototype, "authInProgress", void 0), _([s.observable], w.prototype, "version", void 0), _([s.observable], w.prototype, "splitTest", void 0), _([s.observable], w.prototype, "settings", void 0), _([s.computed], w.prototype, "sign", null), _([s.action], w.prototype, "setSplitTest", void 0), _([s.action], w.prototype, "setUserBlocked", void 0), _([s.action], w.prototype, "setlanguage", void 0), _([s.action], w.prototype, "setRates", void 0), _([s.action], w.prototype, "setUserAuthenticated", void 0), _([s.action], w.prototype, "setAuthInProgress", void 0), _([s.action], w.prototype, "setCentrifugeAuthenticated", void 0), _([s.action], w.prototype, "setRtp", void 0), _([s.action], w.prototype, "logout", void 0), _([s.action], w.prototype, "auth", void 0), _([s.action], w.prototype, "connectPingSocket", void 0), _([s.action], w.prototype, "setVersion", void 0), _([s.action], w.prototype, "fetchVersion", void 0), _([s.action], w.prototype, "fetchLimits", void 0), _([s.action], w.prototype, "fetchRates", void 0), _([s.action], w.prototype, "fetchRules", void 0), _([s.action], w.prototype, "updateBalance", void 0), _([s.action], w.prototype, "checkTokenForRtp", void 0), _([s.action], w.prototype, "setProfile", void 0), _([s.action], w.prototype, "setBalance", void 0), _([s.action], w.prototype, "setLimit", void 0), _([s.action], w.prototype, "setPlayerName", void 0), _([s.action], w.prototype, "setIsChangedNickname", void 0);
@@ -23944,7 +24036,7 @@ n.register("2tann", (function(t, r) {
                     type: "image/svg+xml",
                     data: P[t]
                 }, {
-                    children: "svg-animation"
+                    children: ""
                 }), void 0)
             }), void 0), i.jsx("div", Object.assign({
                 className: "game__inner"
@@ -40406,7 +40498,7 @@ n.register("2tann", (function(t, r) {
                 type: "image/svg+xml",
                 data: h[c.sector][c.index].data
             }, {
-                children: "svg-animation"
+                children: ""
             }), void 0)
         }), void 0) : null
     }))
