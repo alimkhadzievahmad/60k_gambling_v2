@@ -198,7 +198,7 @@ n.register("2tann", (function(t, r) {
         return g = e
     }));
     var o = n("5qiDF"),
-        s = n("bdXTJ"), // <-- ЭТО ИМПОРТ ГЕНЕРАТОРА СИДОВ
+        s = n("bdXTJ"),
         a = n("eR7Wf"),
         u = n("dCyBd"),
         c = n("cMNMS"),
@@ -232,92 +232,194 @@ n.register("2tann", (function(t, r) {
                 index: 0,
                 time: 0,
                 color: 0
-            }, this.mockGame = () => {}, 
-            this.setWin = e => { this.win = e }, 
-            this.setWinStack = e => { this.winStack = e }, 
-            this.setGameUi = e => { this.gameUi = e }, 
-            this.changeRows = e => { this.rows = e, u.default.set("saved_rows", e) }, 
-            this.changeLevel = e => { this.level = e }, 
-            this.setMyBetsUpdater = () => { this.myBetsUpdater = this.myBetsUpdater + 1 }, 
-            this.startGame = async (e = 1) => { return this.mockGame(), await this.createGame(e) },
-            
-            this.createGame = async (e = 1) => {
-                console.log("!!! MOCKING createGame: Round is ready. !!!");
-                o.runInAction((() => {
-                    this.setGame("fake-game-id-on-create"), this.gameCreated = !0
-                }))
-            }, 
-
-            this.placeBetGame = async (e = 1) => {
-                const { profileCommon: { profile: { balance: t } }, uiCommon: { setAlert: r } } = this.root;
-                if (null === t || !(t <= 0 || t < Number(this.amount))) return await this.placeBet(e);
-                r({ title: "COMMON.PLACEBET.ERROR.3", type: "error" })
-            }, 
-            
-            // --- ФИНАЛЬНАЯ, РАБОЧАЯ ВЕРСИЯ ВЗЛОМА placeBet ---
-            this.placeBet = async (e = 1) => {
-                if (!this.gameCreated) return null;
-                
-                try {
-                    // !!! КЛЮЧЕВОЙ МОМЕНТ: ГЕНЕРИРУЕМ НОВЫЙ СИД ПЕРЕД КАЖДОЙ СТАВКОЙ !!!
-                    o.runInAction(() => {
-                        this.clientSeed = s.default(); 
-                        this.nonce = (this.nonce || 0) + 1;
-                    });
-
-                    const { level: n, rows: i } = this;
-                    console.log(`!!! MOCKING BET with NEW clientSeed: ${this.clientSeed} !!!`);
-
-                    const generatedResults = [];
-                    const numRows = parseInt(i);
-                    for (let j = 0; j < e; j++) {
-                        const path = [];
-                        for (let k = 0; k < numRows; k++) {
-                            path.push(Math.floor(Math.random() * 2));
+            }, this.mockGame = () => {
+                const {
+                    location: e
+                } = window, {
+                    search: t
+                } = e, r = new URLSearchParams(t);
+                r.has("serverSeed") && (console.log("mockGame set"), o.runInAction((() => {
+                    this.serverSeed = r.get("serverSeed") || void 0, this.nonce = Number(r.get("nonce")) || void 0, this.clientSeed = r.get("clientSeed") || void 0
+                })))
+            }, this.setWin = e => {
+                this.win = e
+            }, this.setWinStack = e => {
+                this.winStack = e
+            }, this.setGameUi = e => {
+                this.gameUi = e
+            }, this.changeRows = e => {
+                this.rows = e, u.default.set("saved_rows", e)
+            }, this.changeLevel = e => {
+                this.level = e
+            }, this.setMyBetsUpdater = () => {
+                this.myBetsUpdater = this.myBetsUpdater + 1
+            }, this.startGame = async (e = 1) => {
+                const {
+                    profileCommon: {
+                        profile: {
+                            balance: t
                         }
-                        generatedResults.push({ type: "path", path: path });
+                    },
+                    uiCommon: {
+                        setAlert: r
                     }
-            
-                    const fakeResponseData = {
-                        roundId: `fake-local-round-${Date.now()}`,
-                        results: generatedResults,
-                        payout: 2.0, 
-                        coefficient: 2.0
-                    };
-            
-                    // "Скармливаем" результат, который теперь будет соответствовать новому сиду
-                    await this.setGameResultResults(fakeResponseData);
-                    
-                    this.setMyBetsUpdater();
-                    await this.startGame();
-                    return fakeResponseData.roundId;
-            
-                } catch (err) {
-                    console.log("placeBet error:", err);
-                    await this.startGame();
+                } = this.root;
+                return this.mockGame(), await this.createGame(e)
+            }, this.createGame = async (e = 1) => {
+                const {
+                    clientSeed: t,
+                    nonce: r,
+                    serverSeed: n,
+                    level: i,
+                    rows: s,
+                    root: {
+                        profileCommon: {
+                            profile: {
+                                token: a,
+                                playerId: u,
+                                currency: l,
+                                subPartnerId: h
+                            }
+                        },
+                        uiCommon: {
+                            isMobile: d
+                        },
+                        tournamentsCommon: {
+                            addBet: p
+                        }
+                    }
+                } = this;
+                try {
+                    const {
+                        data: e
+                    } = await c.createGameRequest({
+                        headers: f.default({
+                            authorization: a,
+                            apikey: u,
+                            subpartnerid: h,
+                            metadata: JSON.stringify({
+                                device: d ? "mobile" : "desktop",
+                                manual: !1
+                            })
+                        }),
+                        clientSeed: t,
+                        nonce: r,
+                        serverSeed: n,
+                        theme: "default"
+                    });
+                    o.runInAction((() => {
+                        this.setGame(e.roundId), this.gameCreated = !0
+                    }))
+                } catch (e) {
+                    return console.log("fetchGame error:", e), this.gameCreated = !1, e
                 }
-            },
-
-            this.setGameResultResults = e => { this.gameResultResults = e.results; }, 
-            this.setGame = (e = "") => { this.gameId = e }, 
-            this.retreiveAmount = () => {
-                const { limit: { minBet: e, defaultBet: t }, profile: { currency: r } } = this.root.profileCommon, n = u.default.get(`saved_amount:${r}`);
-                this.amount = n && !isNaN(Number(n)) ? n : String(t || 10 * e)
-            }, 
-            this.setAmount = e => {
-                const { profile: { currency: t } } = this.root.profileCommon;
+            }, this.placeBetGame = async (e = 1) => {
+                const {
+                    profileCommon: {
+                        profile: {
+                            balance: t
+                        }
+                    },
+                    uiCommon: {
+                        setAlert: r
+                    }
+                } = this.root;
+                if (null === t || !(t <= 0 || t < Number(this.amount))) return await this.placeBet(e);
+                r({
+                    title: "COMMON.PLACEBET.ERROR.3",
+                    type: "error"
+                })
+            }, this.placeBet = async (e = 1) => {
+                if (!this.gameCreated) return null;
+                const {
+                    clientSeed: t,
+                    nonce: r,
+                    level: n,
+                    rows: i,
+                    root: {
+                        profileCommon: {
+                            profile: {
+                                token: o,
+                                playerId: s,
+                                currency: a,
+                                subPartnerId: u
+                            }
+                        },
+                        uiCommon: {
+                            isMobile: l
+                        },
+                        tournamentsCommon: {
+                            addBet: h
+                        }
+                    },
+                    gameId: d
+                } = this;
+                try {
+                    if (!this.gameId) throw "Empty roundId";
+                    this.gameCreated = !1;
+                    const {
+                        data: d
+                    } = await c.betRequest({
+                        headers: f.default({
+                            authorization: o,
+                            apikey: s,
+                            subpartnerid: u,
+                            metadata: JSON.stringify({
+                                device: l ? "mobile" : "desktop",
+                                manual: !1
+                            })
+                        }),
+                        roundId: this.gameId,
+                        clientSeed: t,
+                        nonce: r,
+                        level: n,
+                        rows: i,
+                        amount: Number(this.amount),
+                        currency: a,
+                        multiple: e
+                    });
+                    return await this.setGameResultResults(d), h({
+                        amount: e * Number(this.amount),
+                        coefficient: this.coefficient
+                    }), this.setMyBetsUpdater(), await this.startGame(), d.roundId
+                } catch (e) {
+                    return console.log("placeBet error:", e), await this.startGame(), this.setGameUi(!1), this.root.uiCommon.errorCodeResolver(e.response), e
+                }
+            }, this.setGameResultResults = e => {
+                const {
+                    results: t
+                } = e;
+                this.gameResultResults = t
+            }, this.setGame = (e = "") => {
+                this.gameId = e
+            }, this.retreiveAmount = () => {
+                const {
+                    limit: {
+                        minBet: e,
+                        defaultBet: t
+                    },
+                    profile: {
+                        currency: r
+                    }
+                } = this.root.profileCommon, n = u.default.get(`saved_amount:${r}`);
+                n && !isNaN(Number(n)) ? this.amount = n : this.amount = String(t || 10 * e)
+            }, this.setAmount = e => {
+                const {
+                    profile: {
+                        currency: t
+                    }
+                } = this.root.profileCommon;
                 u.default.set(`saved_amount:${t}`, e), this.amount = String(e)
-            }, 
-            
-            this.root = e, o.makeObservable(this);
-            this.gameName = "turboplinko", this.gameServerId = this.gameName, this.root.profileCommon.auth(this.gameServerId).then((async () => {
+            }, this.root = e, o.makeObservable(this), this.centrifuge = new(t(a))(l.default.centrifuge, {
+                debug: !1
+            }), this.gameName = "turboplinko", this.gameServerId = this.gameName, this.root.profileCommon.auth(this.gameServerId).then((async () => {
                 this.retreiveAmount(), this.startGame()
             }))
         }
     }
     p([o.observable], m.prototype, "gameId", void 0), p([o.observable], m.prototype, "roundSeed", void 0), p([o.observable], m.prototype, "clientSeed", void 0), p([o.observable], m.prototype, "serverSeed", void 0), p([o.observable], m.prototype, "nonce", void 0), p([o.observable], m.prototype, "amount", void 0), p([o.observable], m.prototype, "gameResult", void 0), p([o.observable], m.prototype, "payout", void 0), p([o.observable], m.prototype, "coefficient", void 0), p([o.observable], m.prototype, "gameResultResults", void 0), p([o.observable], m.prototype, "gameUi", void 0), p([o.observable], m.prototype, "myBetsUpdater", void 0), p([o.observable], m.prototype, "rows", void 0), p([o.observable], m.prototype, "level", void 0), p([o.observable], m.prototype, "gameCreated", void 0), p([o.observable], m.prototype, "win", void 0), p([o.observable], m.prototype, "winStack", void 0), p([o.computed], m.prototype, "levelsByRtp", null), p([o.action], m.prototype, "mockGame", void 0), p([o.action], m.prototype, "setWin", void 0), p([o.action], m.prototype, "setWinStack", void 0), p([o.action], m.prototype, "setGameUi", void 0), p([o.action], m.prototype, "changeRows", void 0), p([o.action], m.prototype, "changeLevel", void 0), p([o.action], m.prototype, "setMyBetsUpdater", void 0), p([o.action], m.prototype, "startGame", void 0), p([o.action], m.prototype, "createGame", void 0), p([o.action], m.prototype, "placeBetGame", void 0), p([o.action], m.prototype, "placeBet", void 0), p([o.action], m.prototype, "setGameResultResults", void 0), p([o.action], m.prototype, "setGame", void 0), p([o.action], m.prototype, "retreiveAmount", void 0), p([o.action], m.prototype, "setAmount", void 0);
     var g = m
-})); n.register("bdXTJ", (function(t, r) {
+})), n.register("bdXTJ", (function(t, r) {
     e(t.exports, "default", (function() {
         return s
     }));
@@ -2172,12 +2274,15 @@ n.register("2tann", (function(t, r) {
             }, this.set = (e, t) => this.check() && localStorage.setItem(e, t), this.get = e => this.check() && localStorage.getItem(e), this.remove = e => this.check() && localStorage.removeItem(e)
         }
     }
-})),  n.register("cMNMS", (function(r, i) {
+})), n.register("cMNMS", (function(r, i) {
+    // Эта часть регистрирует функции для остальной части игры
     e(r.exports, "createGameRequest", (function() {
         return l
     })), e(r.exports, "betRequest", (function() {
         return h
     }));
+
+    // Импорты оставляем, они формально нужны для структуры модуля
     var o = n("JP6A1"),
         s = n("hDBkO"),
         a = n("5SHse");
@@ -2186,40 +2291,47 @@ n.register("2tann", (function(t, r) {
             baseURL: `${u}://${a.default.api}/api`
         });
 
-    // "Взломанный" createGameRequest, чтобы игра инициализировалась
+    // --- НАША МОДИФИКАЦИЯ: "ВЗЛАМЫВАЕМ" ОБА ЗАПРОСА ---
+
+    // 1. "Взломанный" createGameRequest, чтобы игра инициализировалась
     var l = e => {
         console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
         const fakeResponse = {
             data: {
-                roundId: `fake-round-${Date.now()}`
+                roundId: `fake-round-${Date.now()}`,
+                // Добавляем фейковый serverSeed, чтобы игра была "довольна"
+                serverSeed: "mock-server-seed-ACAB1312" 
             }
         };
+        // Возвращаем Promise, чтобы игра думала, что это асинхронный запрос
         return Promise.resolve(fakeResponse);
     };
     
-    // "Взломанный" betRequest с ГЕНЕРАЦИЕЙ СЛУЧАЙНЫХ ПУТЕЙ
+    // 2. "Взломанный" betRequest с ПРАВИЛЬНОЙ генерацией результата
     var h = e => {
-        console.log("!!! INTERCEPTED betRequest -> SENDING RANDOMIZED FAKE response !!!", e);
+        console.log("!!! INTERCEPTED betRequest -> SENDING CORRECTLY RANDOMIZED FAKE response !!!", e);
         
         // Берем количество шариков и рядов из реального запроса
         const diskCount = e.multiple || 1;
         const numRows = e.rows || 8;
         
-        // Генерируем СЛУЧАЙНЫЕ траектории
+        // --- ПРАВИЛЬНЫЙ РАНДОМАЙЗЕР ---
         const generatedResults = [];
         for (let j = 0; j < diskCount; j++) {
-            const path = [];
-            for (let k = 0; k < numRows; k++) {
-                // 0 = налево, 1 = направо
-                path.push(Math.floor(Math.random() * 2)); 
-            }
-            generatedResults.push({ type: "path", path: path });
+            // Генерируем случайное число. 
+            // 2 в степени (количество рядов) дает нам количество возможных исходов.
+            const possibleOutcomes = Math.pow(2, numRows);
+            const randomResult = Math.floor(Math.random() * possibleOutcomes);
+            
+            // Отдаем игре ТОЛЬКО это число, как это делает реальный сервер
+            generatedResults.push(randomResult);
         }
+        // --- КОНЕЦ РАНДОМАЙЗЕРА ---
 
         const fakeResponse = {
             data: {
                 roundId: `fake-bet-round-${Date.now()}`,
-                results: generatedResults,
+                results: generatedResults, // Теперь это массив чисел [123, 45, 67, ...]
                 payout: 2.0,
                 coefficient: 2.0
             }
@@ -2228,63 +2340,7 @@ n.register("2tann", (function(t, r) {
         // Возвращаем Promise с небольшой задержкой для реализма
         return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
     };
-})); n.register("cMNMS", (function(r, i) {
-    e(r.exports, "createGameRequest", (function() {
-        return l
-    })), e(r.exports, "betRequest", (function() {
-        return h
-    }));
-    var o = n("JP6A1"),
-        s = n("hDBkO"),
-        a = n("5SHse");
-    const u = a.default.api.includes("localhost") ? "http" : "https",
-        c = t(s).create({
-            baseURL: `${u}://${a.default.api}/api`
-        });
-
-    // "Взломанный" createGameRequest, чтобы игра инициализировалась
-    var l = e => {
-        console.log("!!! INTERCEPTED createGameRequest -> FAKE SUCCESS !!!");
-        const fakeResponse = {
-            data: {
-                roundId: `fake-round-${Date.now()}`
-            }
-        };
-        return Promise.resolve(fakeResponse);
-    };
-    
-    // "Взломанный" betRequest с ГЕНЕРАЦИЕЙ СЛУЧАЙНЫХ ПУТЕЙ
-    var h = e => {
-        console.log("!!! INTERCEPTED betRequest -> SENDING RANDOMIZED FAKE response !!!", e);
-        
-        // Берем количество шариков и рядов из реального запроса
-        const diskCount = e.multiple || 1;
-        const numRows = e.rows || 8;
-        
-        // Генерируем СЛУЧАЙНЫЕ траектории
-        const generatedResults = [];
-        for (let j = 0; j < diskCount; j++) {
-            const path = [];
-            for (let k = 0; k < numRows; k++) {
-                // 0 = налево, 1 = направо
-                path.push(Math.floor(Math.random() * 2)); 
-            }
-            generatedResults.push({ type: "path", path: path });
-        }
-
-        const fakeResponse = {
-            data: {
-                roundId: `fake-bet-round-${Date.now()}`,
-                results: generatedResults,
-                payout: 2.0,
-                coefficient: 2.0
-            }
-        };
-        
-        // Возвращаем Promise с небольшой задержкой для реализма
-        return new Promise(resolve => setTimeout(() => resolve(fakeResponse), 150));
-    };
-})); n.register("lM8va", (function(t, r) {
+})), n.register("lM8va", (function(t, r) {
     e(t.exports, "default", (function() {
         return n
     }));
@@ -2365,44 +2421,26 @@ n.register("2tann", (function(t, r) {
                 variantType: null,
                 variantValue: "",
                 variants: 2
-            }, this.settings = {}, this.checkCookies = () => {
-                const e = g.cookieManager.getObjectCookie("splitTest");
-                e && (this.setSplitTest(e), null !== (null == e ? void 0 : e.variantValue) && "default" !== (null == e ? void 0 : e.variantType) && y.default({
-                    action: "experiment_running",
-                    attribute: `${null==e?void 0:e.variantValue}: ${null==e?void 0:e.variantType}`
-                }))
-            }, this.setSplitTest = e => {
-                this.splitTest = e
-            }, this.setUserBlocked = e => {
-                this.userBlocked = e
-            }, this.setlanguage = e => {
-                this.language = e
-            }, this.setRates = e => {
-                this.rates = e
-            }, this.setUserAuthenticated = e => {
-                console.log("setusrauth", e), this.userAuthenticated = e
-            }, this.setAuthInProgress = e => {
-                this.authInProgress = e
-            }, this.setCentrifugeAuthenticated = e => {
-                this.centrifugeAuthenticated = e
-            }, this.setRtp = e => {
-                this.rtp = e
-            }, this.logout = () => {
-                a.default.remove("apiKey"), a.default.remove("token"), a.default.remove("externalToken"), a.default.set("isDemo", !1), this.profile = x, this.limit = E, this.setUserAuthenticated(!1), this.setAuthInProgress(!1)
-            }, 
+            }, this.settings = {}, this.checkCookies = () => {}, 
+            this.setSplitTest = e => { this.splitTest = e }, 
+            this.setUserBlocked = e => { this.userBlocked = e }, 
+            this.setlanguage = e => { this.language = e }, 
+            this.setRates = e => { this.rates = e }, 
+            this.setUserAuthenticated = e => { this.userAuthenticated = e }, 
+            this.setAuthInProgress = e => { this.authInProgress = e }, 
+            this.setCentrifugeAuthenticated = e => { this.centrifugeAuthenticated = e }, 
+            this.setRtp = e => { this.rtp = e }, 
+            this.logout = () => {}, 
             
-            // =================================================================
-            // ========= НАЧАЛО НАШЕЙ МОДИФИКАЦИИ (ВЗЛОМ auth) =================
-            // =================================================================
+            // --- "ВЗЛОМАННАЯ" ФУНКЦИЯ АВТОРИЗАЦИИ ---
             this.auth = async e => {
-                this.setAuthInProgress(true);
+                this.setAuthInProgress(!0);
                 console.log("!!! MOCKING AUTHENTICATION !!!");
-            
                 try {
                     // Имитируем успешную авторизацию
-                    this.setUserAuthenticated(true);
-                    this.setCentrifugeAuthenticated(true); // говорим, что WebSocket тоже ок
-                    this.setAuthInProgress(false);
+                    this.setAuthInProgress(!1);
+                    this.setUserAuthenticated(!0);
+                    this.setCentrifugeAuthenticated(!0); // Говорим, что WebSocket тоже ок
             
                     // Устанавливаем фейковые, но рабочие данные профиля
                     this.setProfile({
@@ -2411,14 +2449,14 @@ n.register("2tann", (function(t, r) {
                         externalToken: "fake-external-token",
                         playerId: "fake-player-id",
                         id: "fake-player-id",
-                        balance: 99999, // Начальный баланс
-                        balanceLoad: true,
+                        balance: 99999,
+                        balanceLoad: !0,
                         currency: "USD",
                         currencySign: "$",
-                        isDemo: true,
+                        isDemo: !0,
                         name: "Player",
                         subPartnerId: "",
-                        freebetsVerified: false,
+                        freebetsVerified: !1,
                         freebetsType: null,
                         rounding: 2
                     });
@@ -2432,74 +2470,38 @@ n.register("2tann", (function(t, r) {
                         maxWin: 1000,
                         minBet: 0.1
                     });
-            
                 } catch (e) {
-                    this.setAuthInProgress(false);
+                    this.setAuthInProgress(!1);
                     console.log("Auth mock error:", e);
                 }
-            },
-            // =================================================================
-            // ========= КОНЕЦ НАШЕЙ МОДИФИКАЦИИ =============================
-            // =================================================================
+            }, 
 
-            this.connectPingSocket = async (e, t) => {
-                if (!t || !["r88", "r88-qa", "r88-release-beta", "r88-demo", "r88-release"].includes(t)) return;
-                let r, n = 0,
-                    i = !1;
-                const o = `wss://${document.location.host}/ping`,
-                    s = () => {
-                        r = new WebSocket(o, e), r.onopen = () => {
-                            i = !0, console.log("opened ping connection")
-                        }, r.onmessage = () => {}, r.onclose = () => {
-                            n < 3 && !i && (s(), d.default(1), n++)
-                        }
-                    };
-                s()
-            }, this.setVersion = e => {
-                console.log(e, "version"), this.version = e, a.default.set("gameVersionLs", JSON.stringify(e)), a.default.set("versionDate", Date.now())
-            }, this.fetchVersion = async () => {
-                // ... (остальной код оставляем без изменений)
-            }, this.fetchLimits = async () => {
-                // ...
-            }, this.fetchRates = async () => {
-                // ...
-            }, this.fetchRules = async () => {
-                // ...
-            }, this.updateBalance = async () => {
-                // ...
-            }, this.checkTokenForRtp = e => {
-                const r = t(f).decode(e);
-                r && "object" == typeof r && r.config && r.config.rtp && this.setRtp(r.config.rtp)
-            }, this.setProfile = e => {
-                var t;
-                const {
-                    currencySign: r
-                } = e;
-                if (r && r.length > 1 && "mBTC" !== r && (e.currencySign = r.toUpperCase()), this.profile = e, e.splitTest && null === (null === (t = this.splitTest) || void 0 === t ? void 0 : t.variantType)) {
-                    var n, i, o, s, a, u, c;
-                    const t = 18e5,
-                        r = 108e5;
-                    this.setSplitTest(e.splitTest), v.default(e.splitTest), b.default(e.splitTest), null !== (null === (n = e.splitTest) || void 0 === n ? void 0 : n.variantValue) && "default" !== (null === (i = e.splitTest) || void 0 === i ? void 0 : i.variantType) && y.default({
-                        action: "experiment_start",
-                        attribute: `${null===(o=e.splitTest)||void 0===o?void 0:o.variantValue}: ${null===(s=e.splitTest)||void 0===s?void 0:s.variantType}`
-                    }), g.cookieManager.setObjectCookie("splitTest", "default" === (null === (a = e.splitTest) || void 0 === a ? void 0 : a.variantType) || "control" === (null === (u = e.splitTest) || void 0 === u ? void 0 : u.variantType) ? e.splitTest : 0, "default" === (null === (c = e.splitTest) || void 0 === c ? void 0 : c.variantType) ? t : r)
-                }
+            this.connectPingSocket = async (e, t) => {}, 
+            this.setVersion = e => {}, 
+            this.fetchVersion = async () => {}, 
+            this.fetchLimits = async () => {}, 
+            this.fetchRates = async () => {}, 
+            this.fetchRules = async () => {}, 
+            this.updateBalance = async () => {}, 
+            this.checkTokenForRtp = e => {}, 
+            this.setProfile = e => {
+                this.profile = e
             }, this.setBalance = e => {
                 this.profile = o.objectSpread({}, this.profile, {
                     balance: p.default(e, this.profile.rounding)
                 })
             }, this.setLimit = e => {
                 this.limit = e
-            }, this.setPlayerName = async e => {
-                // ...
-            }, this.setIsChangedNickname = e => {
+            }, this.setPlayerName = async e => {}, 
+            this.setIsChangedNickname = e => {
                 this.isChangedNickname = e
-            }, this.root = e, s.makeObservable(this), this.checkCookies()
+            }, 
+            this.root = e, s.makeObservable(this), this.checkCookies()
         }
     }
     _([s.observable], w.prototype, "profile", void 0), _([s.observable], w.prototype, "limit", void 0), _([s.observable], w.prototype, "rtp", void 0), _([s.observable], w.prototype, "centrifugeAuthenticated", void 0), _([s.observable], w.prototype, "changedNickname", void 0), _([s.observable], w.prototype, "isChangedNickname", void 0), _([s.observable], w.prototype, "rates", void 0), _([s.observable], w.prototype, "statistics", void 0), _([s.observable], w.prototype, "language", void 0), _([s.observable], w.prototype, "userAuthenticated", void 0), _([s.observable], w.prototype, "userBlocked", void 0), _([s.observable], w.prototype, "authInProgress", void 0), _([s.observable], w.prototype, "version", void 0), _([s.observable], w.prototype, "splitTest", void 0), _([s.observable], w.prototype, "settings", void 0), _([s.computed], w.prototype, "sign", null), _([s.action], w.prototype, "setSplitTest", void 0), _([s.action], w.prototype, "setUserBlocked", void 0), _([s.action], w.prototype, "setlanguage", void 0), _([s.action], w.prototype, "setRates", void 0), _([s.action], w.prototype, "setUserAuthenticated", void 0), _([s.action], w.prototype, "setAuthInProgress", void 0), _([s.action], w.prototype, "setCentrifugeAuthenticated", void 0), _([s.action], w.prototype, "setRtp", void 0), _([s.action], w.prototype, "logout", void 0), _([s.action], w.prototype, "auth", void 0), _([s.action], w.prototype, "connectPingSocket", void 0), _([s.action], w.prototype, "setVersion", void 0), _([s.action], w.prototype, "fetchVersion", void 0), _([s.action], w.prototype, "fetchLimits", void 0), _([s.action], w.prototype, "fetchRates", void 0), _([s.action], w.prototype, "fetchRules", void 0), _([s.action], w.prototype, "updateBalance", void 0), _([s.action], w.prototype, "checkTokenForRtp", void 0), _([s.action], w.prototype, "setProfile", void 0), _([s.action], w.prototype, "setBalance", void 0), _([s.action], w.prototype, "setLimit", void 0), _([s.action], w.prototype, "setPlayerName", void 0), _([s.action], w.prototype, "setIsChangedNickname", void 0);
     var S = w
-})); n.register("2M1Pk", (function(t, r) {
+})), n.register("2M1Pk", (function(t, r) {
     function n(e) {
         const {
             pathname: t
@@ -24092,7 +24094,7 @@ n.register("2tann", (function(t, r) {
                     type: "image/svg+xml",
                     data: P[t]
                 }, {
-                    children: ""
+                    children: "svg-animation"
                 }), void 0)
             }), void 0), i.jsx("div", Object.assign({
                 className: "game__inner"
@@ -40554,7 +40556,7 @@ n.register("2tann", (function(t, r) {
                 type: "image/svg+xml",
                 data: h[c.sector][c.index].data
             }, {
-                children: ""
+                children: "svg-animation"
             }), void 0)
         }), void 0) : null
     }))
